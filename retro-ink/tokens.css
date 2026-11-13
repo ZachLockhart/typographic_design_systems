@@ -1,0 +1,18 @@
+/* retro-ink v1.0 — high contrast, e-paper friendly */
+:root {
+  color-scheme: light;
+  --ink:#000; --paper:#fff; --muted:#444; --rule:#000;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: Georgia, 'Times New Roman', serif;
+  --font-data: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-5:24px; --space-6:32px; --space-7:48px;
+  --line-thin:1px solid var(--rule); --line-heavy:3px solid var(--rule);
+  --page-max:1600px;
+}
+* {box-sizing:border-box}
+html {background:var(--paper);color:var(--ink)}
+body {margin:0;font-family:var(--font-body);font-size:16px;line-height:1.35}
+button,input,select {font:inherit}
+a {color:inherit;text-decoration-thickness:2px;text-underline-offset:3px}
+:focus-visible {outline:3px double var(--ink);outline-offset:3px}

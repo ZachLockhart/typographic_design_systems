@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Type Specimen — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<script src="../engraved-modernism/em-watch.js" defer></script><!-- dev auto-reload; remove in production -->
+<style>
+  .ts-hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--em-s6); align-items: center; margin-top: var(--em-s4); }
+  .ts-aa { font: var(--em-display-w) clamp(8rem, 22vw, 15rem)/.8 var(--em-display); letter-spacing: -.04em; }
+  .ts-aa i { font-family: var(--em-text); font-weight: 400; }
+  .ts-names { display: grid; gap: var(--em-s3); }
+  .ts-names > div { border-top: var(--em-fine) solid var(--em-ink); padding-top: var(--em-s2); display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--em-s3); align-items: baseline; }
+  .ts-names b { font-weight: inherit; font-size: var(--em-fs-lg); }
+  .ts-set { display: block; font: var(--em-display-w) var(--em-fs-xl)/1 var(--em-display); }
+  .ts-chars { font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.35; word-break: break-all; margin: 0; }
+  .ts-chars.d { font-family: var(--em-display); font-weight: var(--em-display-w); }
+  .ts-chars.l { font-family: var(--em-label); font-weight: var(--em-label-w); letter-spacing: var(--em-track); }
+  .ts-row { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: var(--em-s5); padding: var(--em-s4) 0; border-bottom: var(--em-fine) solid var(--em-ink); align-items: baseline; }
+  .ts-row:first-of-type { border-top: var(--em-line) solid var(--em-ink); }
+  .ts-water > div { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--em-s4); align-items: baseline; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ts-water span:last-child { overflow: hidden; text-overflow: ellipsis; font-family: var(--em-display); font-weight: var(--em-display-w); line-height: 1.1; }
+  .ts-figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--em-s5); }
+  .ts-figs p { margin: 0; font-size: 1.6rem; }
+  @media (max-width: 760px) { .ts-hero, .ts-figs { grid-template-columns: 1fr; } .ts-row { grid-template-columns: 1fr; gap: var(--em-s2); } }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="mid">Mid</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<main class="em-sheet">
+  <header class="em-masthead"><span class="em-kicker">Specimen of Printing Types</span><span class="em-meta">Switch the type set above to recast this sheet</span></header>
+  <div data-em="scale" data-minor="2"></div>
+
+  <div class="ts-hero">
+    <div class="ts-aa" aria-hidden="true">A<i>g</i></div>
+    <div class="ts-names">
+      <div><span class="em-label">Set</span><span class="ts-set" id="ts-set">Classic</span></div>
+      <div><span class="em-label">Display</span><b id="ts-display" style="font-family:var(--em-display);font-weight:var(--em-display-w)"></b></div>
+      <div><span class="em-label">Text</span><b id="ts-text" style="font-family:var(--em-text)"></b></div>
+      <div><span class="em-label">Labels</span><b id="ts-label" style="font-family:var(--em-label);font-weight:var(--em-label-w);text-transform:uppercase;letter-spacing:var(--em-track);font-size:var(--em-fs-md)"></b></div>
+    </div>
+  </div>
+
+  <section style="margin-top:var(--em-s7)">
+    <div class="ts-row"><span class="em-label">Display caps</span><p class="ts-chars d">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p></div>
+    <div class="ts-row"><span class="em-label">Display lower</span><p class="ts-chars d">abcdefghijklmnopqrstuvwxyz</p></div>
+    <div class="ts-row"><span class="em-label">Text roman</span><p class="ts-chars">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz &amp; ﬁ ﬂ</p></div>
+    <div class="ts-row"><span class="em-label">Text italic</span><p class="ts-chars"><em>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz &amp;</em></p></div>
+    <div class="ts-row"><span class="em-label">Small caps</span><p class="ts-chars em-sc">Plate IV · Figure 3 · Table II · Anno MMXXVI</p></div>
+    <div class="ts-row"><span class="em-label">Labels</span><p class="ts-chars l">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</p></div>
+    <div class="ts-row"><span class="em-label">Signs</span><p class="ts-chars">° ′ ″ ± × ÷ − µ λ Δ Ω ∞ ≈ ≤ ≥ e⁻ ½ ¼ § ¶ † ‡ № “ ” ‘ ’ — –</p></div>
+  </section>
+
+  <section style="margin-top:var(--em-s7)">
+    <h2 class="em-heading">Figures</h2>
+    <div class="ts-figs">
+      <div><p style="font-variant-numeric:oldstyle-nums proportional-nums">0123456789</p><span class="em-meta">Old-style · proportional — prose</span></div>
+      <div><p style="font-variant-numeric:lining-nums tabular-nums">0123456789</p><span class="em-meta">Lining · tabular — data</span></div>
+    </div>
+  </section>
+
+  <section style="margin-top:var(--em-s7)">
+    <h2 class="em-heading">Display waterfall</h2>
+    <div class="ts-water">
+      <div><span class="em-meta">72</span><span style="font-size:72px">Engraved Modernism</span></div>
+      <div><span class="em-meta">48</span><span style="font-size:48px">Engraved Modernism</span></div>
+      <div><span class="em-meta">36</span><span style="font-size:36px">Engraved Modernism</span></div>
+      <div><span class="em-meta">24</span><span style="font-size:24px">Engraved Modernism</span></div>
+      <div><span class="em-meta">18</span><span style="font-size:18px">Engraved Modernism</span></div>
+    </div>
+  </section>
+
+  <section style="margin-top:var(--em-s7)" class="em-grid em-grid--even em-grid--top">
+    <div>
+      <h2 class="em-heading">Text in mass</h2>
+      <p class="em-dropcap">The punch-cutter worked in steel at the size of the finished letter, cutting each character in relief and checking it by smoke-proof against its fellows. From the punch a matrix was struck in copper, and from the matrix the type was cast. Every refinement visible in a page of 1840 began as a few strokes of a graver no wider than a hair.</p>
+    </div>
+    <div>
+      <h2 class="em-heading">&nbsp;</h2>
+      <p class="em-small">At smaller sizes the same face must open its counters and thicken its hairlines; the engraver adjusted every size by hand. Variable optical sizes now make that adjustment automatically, which is why Night pins the display face to a sturdier size: bright strokes on black need the extra weight that small type once received.</p>
+      <p class="em-quote" style="font-size:var(--em-fs-lg)">“Typography exists to honour content.”</p>
+      <p class="em-attrib"><span class="em-label">After R. Bringhurst</span></p>
+    </div>
+  </section>
+
+  <footer class="em-colophon"><span>Specimen</span><span>Plate VII</span><span id="ts-foot">Classic set</span><span class="em-push">Fonts via Google Fonts</span></footer>
+</main>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const root = document.body;
+  const first = (v) => v.split(',')[0].replace(/['"]/g, '').trim();
+  function update() {
+    const cs = getComputedStyle(root);
+    const set = root.classList.contains('em--type-scotch') ? 'Scotch' : root.classList.contains('em--type-precision') ? 'Precision' : 'Classic';
+    document.getElementById('ts-set').textContent = set;
+    document.getElementById('ts-foot').textContent = set + ' set';
+    document.getElementById('ts-display').textContent = first(cs.getPropertyValue('--em-display'));
+    document.getElementById('ts-text').textContent = first(cs.getPropertyValue('--em-text'));
+    document.getElementById('ts-label').textContent = first(cs.getPropertyValue('--em-label'));
+  }
+  new MutationObserver(update).observe(root, { attributes: true, attributeFilter: ['class'] });
+  update();
+});
+</script>
+</body>
+</html>

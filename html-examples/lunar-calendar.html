@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lunar Calendar — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<script src="../engraved-modernism/em-watch.js" defer></script><!-- dev auto-reload; remove in production -->
+<style>
+  .lc-head { display: grid; grid-template-columns: 1fr auto; gap: var(--em-s5); align-items: end; }
+  .lc-nav { display: flex; gap: var(--em-s2); }
+  .lc-nav button { appearance: none; background: var(--em-paper); color: var(--em-ink); border: var(--em-fine) solid var(--em-ink); border-radius: 0; font: var(--em-label-w) var(--em-fs-xs)/1 var(--em-label); text-transform: uppercase; letter-spacing: var(--em-track); padding: .6em .8em; cursor: pointer; }
+  .lc-nav button:hover { background: var(--em-ink); color: var(--em-paper); }
+  .lc-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: var(--em-heavy) solid var(--em-ink); border-left: var(--em-fine) solid var(--em-ink); margin-top: var(--em-s5); }
+  .lc-dow { text-align: center; padding: var(--em-s2) 0; border-right: var(--em-fine) solid var(--em-ink); border-bottom: var(--em-fine) solid var(--em-ink); }
+  .lc-day { position: relative; border-right: var(--em-fine) solid var(--em-ink); border-bottom: var(--em-fine) solid var(--em-ink); padding: var(--em-s2) var(--em-s2) var(--em-s3); min-width: 0; display: grid; justify-items: center; gap: var(--em-s1); }
+  .lc-day.is-blank { background: none; }
+  .lc-num { justify-self: start; font: var(--em-display-w) 1.35rem/1 var(--em-display); font-variant-numeric: lining-nums; }
+  .lc-day [data-em] { width: min(64px, 80%); }
+  .lc-pct { font-size: var(--em-fs-xs); }
+  .lc-key { position: absolute; top: var(--em-s2); right: var(--em-s2); font-size: .7rem; }
+  .lc-day.is-key { outline: var(--em-line) solid var(--em-ink); outline-offset: -5px; }
+  .lc-day.is-today .lc-num { text-decoration: underline; text-decoration-thickness: var(--em-line); text-underline-offset: .15em; }
+  .lc-foot { display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--em-s6); margin-top: var(--em-s6); align-items: start; }
+  @media (max-width: 760px) {
+    .lc-head, .lc-foot { grid-template-columns: 1fr; }
+    .lc-num { font-size: 1rem; } .lc-pct, .lc-key { display: none; }
+    .lc-day { padding: var(--em-s1); } .lc-day.is-key { outline-offset: -3px; }
+  }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="mid">Mid</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<main class="em-sheet">
+  <header class="em-masthead"><span class="em-kicker">Ephemeris</span><span class="em-meta">Mean lunation · 29.530 589 days</span></header>
+  <div data-em="ribbon" style="margin:var(--em-s2) 0 var(--em-s5)"></div>
+
+  <div class="lc-head">
+    <div>
+      <p class="em-meta" id="lc-year"></p>
+      <h1 class="em-display" id="lc-month">Lunar Calendar</h1>
+    </div>
+    <div class="lc-nav em-noprint"><button type="button" id="lc-prev">← Prev</button><button type="button" id="lc-today">This month</button><button type="button" id="lc-next">Next →</button></div>
+  </div>
+
+  <div class="lc-grid" id="lc-grid" aria-live="polite"></div>
+
+  <div class="lc-foot">
+    <table class="em-table" id="lc-table">
+      <caption><span class="em-label">Principal phases</span></caption>
+      <thead><tr><th>Phase</th><th>Date</th><th class="n">Day</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div>
+      <p class="em-note"><span class="em-label">Method</span>Phases are computed from the mean synodic month counted from the new moon of 6 January 2000, 18:14 UT. The true moon can lead or lag the mean by up to about half a day, so treat dates as approximate. Shadows are engraved; the lit limb is paper. Outlined days hold a principal phase; today is underlined.</p>
+    </div>
+  </div>
+
+  <footer class="em-colophon"><span>Ephemeris</span><span>Plate VI</span><span class="em-push">Approximate · computed in your browser</span></footer>
+</main>
+</div>
+
+<script>
+(function () {
+  const SYN = 29.530588853, REF = Date.UTC(2000, 0, 6, 18, 14), DAY = 86400000;
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const KEYS = [[0, 'New'], [0.25, 'First quarter'], [0.5, 'Full'], [0.75, 'Last quarter']];
+  const phaseAt = (t) => ((((t - REF) / DAY / SYN) % 1) + 1) % 1;
+  const lit = (p) => Math.round((1 - Math.cos(2 * Math.PI * p)) / 2 * 100);
+  const now = new Date();
+  let y = now.getFullYear(), m = now.getMonth();
+
+  // which principal phase (if any) falls within [t0, t1)
+  function keyIn(t0, t1) {
+    const p0 = phaseAt(t0), span = (t1 - t0) / DAY / SYN;
+    for (const [k, name] of KEYS) {
+      let d = k - p0; if (d < 0) d += 1;
+      if (d < span) return { name, t: t0 + d * SYN * DAY };
+    }
+    return null;
+  }
+
+  function build() {
+    const grid = document.getElementById('lc-grid'), tbody = document.querySelector('#lc-table tbody');
+    document.getElementById('lc-month').textContent = MONTHS[m];
+    document.getElementById('lc-year').textContent = y + ' · Plate VI';
+    const first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate();
+    let html = DOW.map((d) => `<div class="lc-dow em-label">${d}</div>`).join('');
+    for (let i = 0; i < first.getDay(); i++) html += '<div class="lc-day is-blank" aria-hidden="true"></div>';
+    const rows = [];
+    for (let d = 1; d <= days; d++) {
+      const t0 = new Date(y, m, d).getTime(), t1 = new Date(y, m, d + 1).getTime();
+      const p = phaseAt(t0 + DAY / 2), key = keyIn(t0, t1);
+      const today = y === now.getFullYear() && m === now.getMonth() && d === now.getDate();
+      if (key) rows.push(`<tr><td>${key.name}</td><td class="em-num">${d} ${MONTHS[m].slice(0, 3)}</td><td class="n">${DOW[new Date(y, m, d).getDay()]}</td></tr>`);
+      html += `<div class="lc-day${key ? ' is-key' : ''}${today ? ' is-today' : ''}">` +
+        `<span class="lc-num">${d}</span>` +
+        (key ? `<span class="lc-key em-sc">${key.name.split(' ')[0]}</span>` : '') +
+        `<div data-em="moon" data-phase="${p.toFixed(4)}"></div>` +
+        `<span class="lc-pct em-meta">${lit(p)} %</span></div>`;
+    }
+    grid.innerHTML = html;
+    tbody.innerHTML = rows.join('') || '<tr><td colspan="3">—</td></tr>';
+    if (window.EM) EM.render(grid);
+  }
+  document.getElementById('lc-prev').onclick = () => { m--; if (m < 0) { m = 11; y--; } build(); };
+  document.getElementById('lc-next').onclick = () => { m++; if (m > 11) { m = 0; y++; } build(); };
+  document.getElementById('lc-today').onclick = () => { y = now.getFullYear(); m = now.getMonth(); build(); };
+  build();
+})();
+</script>
+</body>
+</html>

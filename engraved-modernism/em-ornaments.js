@@ -187,7 +187,9 @@
   };
 
   // RIBBON — horizontal guilloché border (banknote edge). Width-responsive.
-  G.ribbon = function (o, W, H) {
+  // data-vertical="true" draws the same band top-to-bottom (for side borders).
+  G.ribbon = function (o, W0, H0) {
+    const vert = !!o.vertical, W = vert ? H0 : W0, H = vert ? W0 : H0;
     const n = o.n || 8, lam = o.wavelength || 30, mid = H / 2;
     const A = H / 2 - 4, mod = o.mod ?? 0.4, modL = lam * (o.modK || 7);
     let b = L(0, 0.75, W, 0.75, 'f') + L(0, H - 0.75, W, H - 0.75, 'f');
@@ -200,7 +202,8 @@
       }
       b += P(pathD(pts), 'h');
     }
-    return wrap(W, H, b, null, ' preserveAspectRatio="none"');
+    if (vert) b = `<g transform="translate(${r2(H)} 0) rotate(90)">${b}</g>`;
+    return wrap(W0, H0, b, null, ' preserveAspectRatio="none"');
   };
 
   // SCALE — graduated instrument rule at true pixel width (no stretching).
@@ -470,13 +473,14 @@
     const o = readOpts(node);
     node.classList.add('em-orn', 'em-orn--' + type);
     if (type === 'scale' && o.labels) node.classList.add('em-orn--labelled');
+    if (type === 'ribbon' && o.vertical) node.classList.add('em-orn--vertical');
     if (type === 'plot' && !node.style.height) node.style.height = (o.height || DEFAULT_H.plot) + 'px';
     if (type === 'hatch' && !node.style.height) node.style.height = (o.height || DEFAULT_H.hatch) + 'px';
     const W = Math.max(40, Math.round(node.clientWidth || 600));
     const H = Math.max(10, Math.round(node.clientHeight || DEFAULT_H[type] || 100));
     node.innerHTML = gen(o, W, H);
     if (gen.after) gen.after(node, o, W, H);
-    node._emW = W;
+    node._emW = W; node._emH = H;
   }
 
   let ro = null;
@@ -485,8 +489,9 @@
     const nodes = rootEl.querySelectorAll('[data-em]');
     if (!ro && 'ResizeObserver' in window) {
       ro = new ResizeObserver((entries) => entries.forEach((en) => {
-        const n = en.target, w = Math.round(n.clientWidth);
-        if (w && w !== n._emW) renderNode(n);
+        const n = en.target, w = Math.round(n.clientWidth), h = Math.round(n.clientHeight);
+        const vert = n.classList.contains('em-orn--vertical');
+        if (w && (w !== n._emW || (vert && h !== n._emH))) renderNode(n);
       }));
     }
     nodes.forEach((n) => { renderNode(n); if (ro && RESPONSIVE[n.dataset.em]) ro.observe(n); });

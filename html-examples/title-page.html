@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Title Page — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<script src="../engraved-modernism/em-watch.js" defer></script><!-- dev auto-reload; remove in production -->
+<style>
+  .tp { max-width: 760px; text-align: center; padding-top: var(--em-s7); padding-bottom: var(--em-s7); }
+  .tp-rule { max-width: 22rem; margin-inline: auto; }
+  .tp-of { font: italic 400 var(--em-fs-lg)/1.2 var(--em-text); margin: var(--em-s5) 0 var(--em-s3); }
+  .tp-title { font: var(--em-display-w) clamp(2.6rem, 7.5vw, 4.75rem)/.98 var(--em-display); letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+  .tp-sub { font: italic 400 var(--em-fs-lg)/1.35 var(--em-text); max-width: 28em; margin: var(--em-s5) auto 0; text-wrap: balance; }
+  .tp-seal { width: min(220px, 60%); margin: var(--em-s7) auto; }
+  .tp-by { margin: 0 0 var(--em-s7); }
+  .tp-by .em-sc { font-size: var(--em-fs-lg); }
+  .tp-imprint { display: grid; gap: var(--em-s2); justify-items: center; }
+  .tp-imprint .em-kicker { font-size: var(--em-fs-md); }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint" style="max-width:760px">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="mid">Mid</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<article class="em-sheet tp">
+  <p class="em-kicker">A Treatise</p>
+  <p class="tp-of">on the</p>
+  <h1 class="tp-title">Engraved Instrument</h1>
+  <hr class="em-rule em-rule--diamond tp-rule" style="margin-top:var(--em-s5)">
+  <p class="tp-sub">being an account of scales, dials and lenses, of the turning of guilloché, and of the setting of figures in two inks</p>
+
+  <div class="tp-seal" data-em="guilloche" data-preset="seal" data-label="Engraved seal"></div>
+
+  <p class="tp-by"><span class="em-italic">compiled by</span><br><span class="em-sc">The Retro-Ink Workshop</span></p>
+
+  <p class="em-meta">With Eight Plates &amp; Numerous Tables</p>
+  <hr class="em-rule em-rule--thin-thick tp-rule" style="margin:var(--em-s3) auto var(--em-s5)">
+  <div class="tp-imprint">
+    <span class="em-kicker">Second State</span>
+    <span class="em-small em-italic">Printed in Two Inks</span>
+    <span class="em-meta">MMXXVI</span>
+  </div>
+</article>
+</div>
+</body>
+</html>

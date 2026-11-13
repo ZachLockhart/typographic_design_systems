@@ -302,6 +302,7 @@ body.em { margin: 0; min-height: 100vh; }
 .em-orn--scale { height: 30px; }
 .em-orn--scale.em-orn--labelled { height: 44px; }
 .em-orn--ribbon { height: 26px; }
+.em-orn--ribbon.em-orn--vertical { height: auto; width: 26px; align-self: stretch; }
 .em-orn :is(path, line, circle, ellipse, polyline, polygon, rect) { vector-effect: non-scaling-stroke; }
 .em-orn .s, .em-orn .h, .em-orn .f, .em-orn .l, .em-orn .k { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 .em-orn .h { stroke-width: var(--em-hair); }

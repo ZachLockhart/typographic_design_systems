@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calibration Certificate — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<script src="../engraved-modernism/em-watch.js" defer></script><!-- dev auto-reload; remove in production -->
+<style>
+  .cert { max-width: 980px; padding: var(--em-s4); }
+  .cert-frame { display: grid; grid-template-columns: 26px minmax(0, 1fr) 26px; grid-template-rows: 26px auto 26px; gap: 5px; }
+  .cert-corner { position: relative; border: var(--em-fine) solid var(--em-ink); }
+  .cert-corner::before { content: ""; position: absolute; inset: 5px; border: var(--em-hair) solid var(--em-ink); transform: rotate(45deg); }
+  .cert-corner::after { content: ""; position: absolute; left: 50%; top: 50%; width: 3px; height: 3px; background: var(--em-ink); transform: translate(-50%, -50%) rotate(45deg); }
+  .cert-body { padding: var(--em-s6) var(--em-s6) var(--em-s5); text-align: center; border: var(--em-hair) solid var(--em-ink); }
+  .cert-title { font: var(--em-display-w) clamp(2.2rem, 5.5vw, 3.75rem)/1 var(--em-display); letter-spacing: .02em; margin: var(--em-s3) 0 0; }
+  .cert-certify { font-style: italic; font-size: var(--em-fs-lg); max-width: 30em; margin: var(--em-s5) auto; line-height: 1.35; }
+  .cert-inst { font: var(--em-display-w) var(--em-fs-xl)/1.1 var(--em-display); margin: 0; }
+  .cert-grid { display: grid; grid-template-columns: minmax(0, 1fr) 200px minmax(0, 1fr); gap: var(--em-s6); align-items: center; text-align: left; margin-top: var(--em-s6); }
+  .cert-grid .em-leaders { font-size: var(--em-fs-sm); }
+  .cert-seal { position: relative; }
+  .cert-seal__face { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
+  .cert-seal__face span { display: block; background: var(--em-paper); padding: .35em .5em; border: var(--em-fine) solid var(--em-ink); }
+  .cert-sign { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--em-s6); margin-top: var(--em-s7); text-align: left; }
+  .cert-sign div { border-top: var(--em-fine) solid var(--em-ink); padding-top: var(--em-s2); }
+  .cert-specimen { margin-top: var(--em-s5); }
+  @media (max-width: 760px) {
+    .cert-grid, .cert-sign { grid-template-columns: 1fr; }
+    .cert-seal { max-width: 180px; margin: auto; order: -1; }
+    .cert-body { padding: var(--em-s5) var(--em-s3); }
+  }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint" style="max-width:980px">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="mid">Mid</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<article class="em-sheet cert">
+  <div class="cert-frame">
+    <div class="cert-corner" aria-hidden="true"></div>
+    <div data-em="ribbon" data-n="10" data-wavelength="22"></div>
+    <div class="cert-corner" aria-hidden="true"></div>
+    <div data-em="ribbon" data-vertical="true" data-n="10" data-wavelength="22"></div>
+
+    <div class="cert-body">
+      <p class="em-kicker">Retro-Ink Instrument Works</p>
+      <h1 class="cert-title">Certificate of Calibration</h1>
+      <hr class="em-rule em-rule--diamond" style="max-width:20rem;margin:var(--em-s5) auto">
+      <p class="cert-certify">This is to certify that the instrument described below has been examined against reference standards and found to perform within the tolerances stated.</p>
+      <p class="cert-inst">Grating Spectrograph, Model E-II</p>
+      <p class="em-meta" style="margin-top:var(--em-s2)">Serial No. 0042 · Certificate No. C-26-1113</p>
+
+      <div class="cert-grid">
+        <ul class="em-leaders">
+          <li><span>Wavelength range</span><span class="em-leader"></span><span class="em-num">380–780 nm</span></li>
+          <li><span>Dispersion</span><span class="em-leader"></span><span class="em-num">0.42 nm/px</span></li>
+          <li><span>Wavelength error</span><span class="em-leader"></span><span class="em-num">± 0.05 nm</span></li>
+          <li><span>Resolving power</span><span class="em-leader"></span><span class="em-num">R ≈ 1 450</span></li>
+        </ul>
+        <div class="cert-seal">
+          <div data-em="guilloche" data-preset="medallion" data-label="Engraved seal"></div>
+          <div class="cert-seal__face"><span class="em-label">Within<br>tolerance</span></div>
+        </div>
+        <ul class="em-leaders">
+          <li><span>Reference lamp</span><span class="em-leader"></span><span class="em-num">Hg–Ar</span></li>
+          <li><span>Ambient</span><span class="em-leader"></span><span class="em-num">20.0 ± 0.5 °C</span></li>
+          <li><span>Date of test</span><span class="em-leader"></span><span class="em-num">13 Nov 2026</span></li>
+          <li><span>Valid until</span><span class="em-leader"></span><span class="em-num">13 Nov 2027</span></li>
+        </ul>
+      </div>
+
+      <div data-em="scale" data-from="380" data-to="780" data-major="50" data-mid="25" data-minor="5" data-labels="true" data-tail="0" data-index="546.1" data-label="Calibrated range 380 to 780 nanometres; index at the 546.1 nm mercury line" style="margin-top:var(--em-s6)"></div>
+      <p class="em-small em-italic" style="margin:var(--em-s2) 0 0">Index: mercury green line, 546.1 nm</p>
+
+      <div class="cert-sign">
+        <div><span class="em-label">Calibrated by</span></div>
+        <div><span class="em-label">Verified by</span></div>
+        <div><span class="em-label">Date</span></div>
+      </div>
+      <p class="em-meta cert-specimen">Specimen — fictional instrument and maker; not a valid certificate</p>
+    </div>
+
+    <div data-em="ribbon" data-vertical="true" data-n="10" data-wavelength="22"></div>
+    <div class="cert-corner" aria-hidden="true"></div>
+    <div data-em="ribbon" data-n="10" data-wavelength="22"></div>
+    <div class="cert-corner" aria-hidden="true"></div>
+  </div>
+</article>
+</div>
+</body>
+</html>

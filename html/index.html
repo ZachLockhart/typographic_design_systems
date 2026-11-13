@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engraved Modernism — Overview</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="docs.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+</head>
+<body class="em">
+<div class="doc">
+<header class="doc-top em-noprint">
+  <a class="doc-brand" href="index.html"><span class="em-kicker">Retro-Ink</span><span class="em-sc">Engraved Modernism</span></a>
+  <nav class="doc-nav" aria-label="Documentation"><a href="index.html" aria-current="page">Overview</a><a href="foundations.html">Foundations</a><a href="typography.html">Typography</a><a href="ornaments.html">Ornaments</a><a href="components.html">Components</a><a href="../html-examples/index.html">Examples</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</header>
+<div data-em="scale" data-from="0" data-to="100" data-major="10" data-minor="2"></div>
+
+<section class="doc-hero em-grid em-grid--golden">
+  <div>
+    <div class="em-medallion" style="--em-medallion:300px">
+      <div data-em="guilloche" data-preset="medallion"></div>
+      <div class="em-medallion__face"><span class="em-numeral">II</span></div>
+    </div>
+    <p class="em-center em-meta" style="margin-top:var(--em-s3)">Second state · November 2026</p>
+  </div>
+  <div>
+    <p class="em-kicker">Design System · Documentation</p>
+    <h1 class="em-display" style="margin-top:var(--em-s3)">Engraved Modernism</h1>
+    <p class="em-lede">A typographic system that reads like a finely engraved scientific instrument, an antique technical encyclopaedia and a modern precision dashboard at once: classical type, guilloché geometry, graduated scales and Swiss discipline in two inks.</p>
+    <p class="em-attrib"><span class="em-label">Retro-Ink</span><em>v2.0 exploration — supersedes the Day &amp; Night v1 packages, which remain as reference</em></p>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>The second state</h2><span class="doc-num">§ 1</span></header>
+  <p class="em-prose">Engravers call each revision of a copper plate a <em>state</em>. This is the second state of Retro-Ink: the same visual vocabulary, re-cut with one stylesheet, generated ornament geometry, and a typographic hierarchy that the v1 packages only gestured at. Use the switches above to see every page in Day, Night or Signal ink, and in each of the three candidate type sets.</p>
+  <table class="em-table" style="margin-top:var(--em-s5)">
+    <thead><tr><th>Aspect</th><th>v1 (Day / Night packages)</th><th>v2 (this system)</th></tr></thead>
+    <tbody>
+      <tr><td><span class="em-sc">Stylesheets</span></td><td>Two near-identical copies; colours hard-coded in places</td><td>One <code>em.css</code>; Day / Night / Signal are token overrides</td></tr>
+      <tr><td><span class="em-sc">Ornament</span></td><td>Static SVGs, duplicated per colour (9 files)</td><td>Generated in <code>currentColor</code> by <code>em-ornaments.js</code>; one geometry for every ink</td></tr>
+      <tr><td><span class="em-sc">Guilloché</span></td><td>One arc family clipped to a ring + zig-zag</td><td>Phase-shifted wave bands, spirograph rosettes, bead and tick rings</td></tr>
+      <tr><td><span class="em-sc">Scales</span></td><td>Ten equal ticks, stretched with the page (diamond distorts)</td><td>Major / half / minor graduation, optional figures, drawn at true pixel width</td></tr>
+      <tr><td><span class="em-sc">Line weight</span></td><td>Identical in both inks</td><td>Four engraved weights; Night is thinned to offset irradiation</td></tr>
+      <tr><td><span class="em-sc">Labels</span></td><td>All Barlow Condensed 800 / .18em</td><td>Kicker · label · meta hierarchy, plus small caps of the text face</td></tr>
+      <tr><td><span class="em-sc">Numerals</span></td><td>Unspecified</td><td>Old-style in prose, tabular lining in data</td></tr>
+      <tr><td><span class="em-sc">Sheet</span></td><td>2px border, 10px rounded corners</td><td>Square plate: heavy rule + inset hair rule</td></tr>
+      <tr><td><span class="em-sc">Type</span></td><td>Bodoni Moda · EB Garamond · Barlow Condensed</td><td>Three candidate sets under evaluation: Classic, Scotch, Precision</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <header><h2>Principles</h2><span class="doc-num">§ 2</span></header>
+  <div class="em-grid em-grid--even em-grid--top">
+    <ol class="em-steps">
+      <li><span><b>Two inks, no tints.</b> Tone is made by line density — hatching, stipple, guilloché — never by grey fills, gradients or shadows.</span></li>
+      <li><span><b>Ornament carries structure.</b> A medallion frames a numeral, a scale divides a masthead, a ribbon closes a panel. Nothing is applied merely to fill space.</span></li>
+      <li><span><b>Precision is visible.</b> Graduations, tabular figures, booktabs rules and exact separators show the care of an instrument maker.</span></li>
+    </ol>
+    <ol class="em-steps" start="4" style="counter-reset:em-step 3">
+      <li><span><b>Classical voice, modern grid.</b> Literary serif text and Didone display sit on an asymmetric Swiss grid with generous white.</span></li>
+      <li><span><b>Each ink is tuned.</b> Night is not an inverted Day: line weights, optical sizes and smoothing are adjusted for light-on-dark.</span></li>
+      <li><span><b>Never fake the data.</b> Example values are illustrative and say so. Figures are drawn, never decorative emoji.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Contents</h2><span class="doc-num">§ 3</span></header>
+  <div class="doc-cards">
+    <a class="doc-card" href="foundations.html"><span class="em-meta">I</span><h3 class="em-heading">Foundations</h3><p>Ink colours and contrast, the four engraved line weights, Night compensation, spacing, the plate.</p></a>
+    <a class="doc-card" href="typography.html"><span class="em-meta">II</span><h3 class="em-heading">Typography</h3><p>Three candidate type sets compared on one specimen; roles, label hierarchy, numerals.</p></a>
+    <a class="doc-card" href="ornaments.html"><span class="em-meta">III</span><h3 class="em-heading">Ornaments</h3><p>Guilloché laboratory, scales, ribbons, dials, moon phases, engraved optics, hatching tones.</p></a>
+    <a class="doc-card" href="components.html"><span class="em-meta">IV</span><h3 class="em-heading">Components</h3><p>Plate, masthead, metric strip, rings, leaders, booktabs table, figures, notes, plots, colophon.</p></a>
+    <a class="doc-card" href="../html-examples/index.html"><span class="em-meta">V</span><h3 class="em-heading">Examples</h3><p>Almanac leaf, imaging-chain plate, instrument panel and technical report built from the system.</p></a>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Quick start</h2><span class="doc-num">§ 4</span></header>
+  <div class="doc-pair">
+    <div>
+      <p>Link the stylesheet and the ornament script, put <code>em</code> on the body, and add <code>em--night</code> (plus <code>em--signal</code>) for the dark inks. Ornaments are empty elements with a <code>data-em</code> type; the script draws them in the current ink.</p>
+      <p class="em-small">Fonts load from Google Fonts. For offline use, self-host the families of the chosen set and replace the <code>@import</code> in <code>em.css</code>.</p>
+    </div>
+<pre class="doc-code">&lt;link rel="stylesheet" href="engraved-modernism/em.css"&gt;
+&lt;script src="engraved-modernism/em-ornaments.js" defer&gt;&lt;/script&gt;
+
+&lt;body class="em em--night"&gt;
+  &lt;section class="em-sheet"&gt;
+    &lt;header class="em-masthead"&gt;
+      &lt;span class="em-kicker"&gt;Field Notes&lt;/span&gt;
+      &lt;span class="em-meta"&gt;Optics · Sensor&lt;/span&gt;
+    &lt;/header&gt;
+    &lt;div data-em="scale" data-tail=".14"&gt;&lt;/div&gt;
+    &lt;div class="em-medallion"&gt;
+      &lt;div data-em="guilloche" data-preset="medallion"&gt;&lt;/div&gt;
+      &lt;div class="em-medallion__face"&gt;
+        &lt;span class="em-numeral"&gt;11&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/body&gt;</pre>
+  </div>
+</section>
+
+<footer class="em-colophon doc-foot"><span>Retro-Ink · Engraved Modernism</span><span>v2.0 exploration</span><span>Reference: <a href="../retro-ink-day/index.html">v1 Day</a> · <a href="../retro-ink-night/index.html">v1 Night</a></span><span class="em-push">Illustrative values only</span></footer>
+</div>
+</body>
+</html>

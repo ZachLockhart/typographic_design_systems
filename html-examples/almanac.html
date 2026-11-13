@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Almanac Leaf — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<style>
+  .alm-cols { display: grid; grid-template-columns: 1.1fr 1fr 1fr 1fr; margin-top: var(--em-s6); border-top: var(--em-line) solid var(--em-ink); padding-top: var(--em-s4); }
+  .alm-cols > * { min-width: 0; }
+  .alm-moon { display: grid; grid-template-columns: 64px 1fr; gap: var(--em-s3); align-items: center; }
+  .alm-word { font: italic 500 var(--em-fs-xl)/1 var(--em-text); }
+  @media (max-width: 760px) { .alm-cols { grid-template-columns: 1fr 1fr; row-gap: var(--em-s5); } .alm-cols > :nth-child(3) { border-left: 0; padding-left: 0; } }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<article class="em-sheet">
+  <header class="em-masthead"><span class="em-kicker">November 2026</span><span class="em-meta">Leaf 317 of 365 · Printed 05:00</span></header>
+  <div data-em="scale" data-from="0" data-to="365" data-major="30" data-mid="15" data-minor="5" data-index="317" data-tail=".12" data-label="Year progress: day 317 of 365"></div>
+
+  <div class="em-grid">
+    <div>
+      <div class="em-medallion">
+        <div data-em="guilloche" data-preset="medallion"></div>
+        <div class="em-medallion__face"><span class="em-numeral">13</span></div>
+      </div>
+      <div class="em-center" style="margin-top:var(--em-s3)">
+        <div class="em-kicker">Friday</div>
+        <div class="em-italic">Jumat</div>
+      </div>
+    </div>
+    <div>
+      <p class="em-quote em-quote--large">One half of the world cannot understand the pleasures of the other.</p>
+      <p class="em-attrib"><span class="em-label">Jane Austen</span><em>Emma</em>, 1815</p>
+      <hr class="em-rule em-rule--diamond" style="max-width:16rem;margin-left:0">
+      <p class="em-meta">No. 05 of 35 · Quotations from the novels</p>
+    </div>
+  </div>
+
+  <div class="alm-cols em-ruled-cols">
+    <section>
+      <div class="em-label">Sun</div>
+      <ul class="em-leaders em-small" style="margin-top:var(--em-s2)">
+        <li><span>Rise</span><span class="em-leader"></span><span class="em-num">07:11</span></li>
+        <li><span>Set</span><span class="em-leader"></span><span class="em-num">16:35</span></li>
+        <li><span>Length</span><span class="em-leader"></span><span class="em-num">9 h 24 m</span></li>
+      </ul>
+    </section>
+    <section>
+      <div class="em-label">Moon</div>
+      <div class="alm-moon" style="margin-top:var(--em-s2)">
+        <div data-em="moon" data-phase="0.1"></div>
+        <div class="em-small">Waxing crescent<br><span class="em-num">≈ 10 %</span> lit</div>
+      </div>
+    </section>
+    <section>
+      <div class="em-label">Weather</div>
+      <div class="em-metric__value" style="margin-top:var(--em-s2)">59° / 48°</div>
+      <div class="em-small em-italic">Fair, light airs from the west</div>
+    </section>
+    <section>
+      <div class="em-label">Kata · Word</div>
+      <div class="alm-word" style="margin-top:var(--em-s2)">bintang</div>
+      <div class="em-small">star <span class="em-meta">· noun</span></div>
+    </section>
+  </div>
+
+  <div data-em="ribbon" style="margin-top:var(--em-s6)"></div>
+  <footer class="em-colophon" style="margin-top:var(--em-s2);border-top:0"><span>Retro-Ink Almanac</span><span>Second state</span><span class="em-push">Sun, moon &amp; weather values illustrative</span></footer>
+</article>
+</div>
+</body>
+</html>

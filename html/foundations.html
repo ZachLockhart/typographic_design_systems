@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engraved Modernism — Foundations</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="docs.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+</head>
+<body class="em">
+<div class="doc">
+<header class="doc-top em-noprint">
+  <a class="doc-brand" href="index.html"><span class="em-kicker">Retro-Ink</span><span class="em-sc">Engraved Modernism</span></a>
+  <nav class="doc-nav" aria-label="Documentation"><a href="index.html">Overview</a><a href="foundations.html" aria-current="page">Foundations</a><a href="typography.html">Typography</a><a href="ornaments.html">Ornaments</a><a href="components.html">Components</a><a href="../html-examples/index.html">Examples</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</header>
+<div data-em="scale" data-from="0" data-to="100" data-major="10" data-minor="2"></div>
+
+<section class="doc-hero">
+  <p class="em-kicker">I · Foundations</p>
+  <h1 class="em-display" style="margin-top:var(--em-s3)">Ink, Line &amp; Plate</h1>
+  <p class="em-lede">Two inks, four line weights, one plate. Everything else in the system is built from these.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Inks</h2><span class="doc-num">§ 1.1</span></header>
+  <div class="doc-quad">
+    <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#fff"></div><div class="doc-swatch__body"><div class="em-label">Day paper</div><code>#FFFFFF</code></div></div>
+    <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#000"></div><div class="doc-swatch__body"><div class="em-label">Day ink · Night paper</div><code>#000000</code> · 21 : 1</div></div>
+    <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FFE66D"></div><div class="doc-swatch__body"><div class="em-label">Night ink</div><code>#FFE66D</code> · 16.8 : 1 on black</div></div>
+    <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FFFF00"></div><div class="doc-swatch__body"><div class="em-label">Signal ink</div><code>#FFFF00</code> · 19.6 : 1 on black</div></div>
+  </div>
+  <dl class="doc-spec" style="margin-top:var(--em-s5)">
+    <dt>Secondary ink</dt><dd>Day has none — metadata stays pure black and is differentiated by weight and size. Night allows <code>#E5CF63</code> (13.5 : 1) for meta text only, to soften dense label rows.</dd>
+    <dt>The one grey</dt><dd><code>--em-ghost</code> exists solely for disabled controls. It is never used for text a reader needs, for fills, or for chart marks.</dd>
+    <dt>Tone</dt><dd>Where a design needs “darker”, add lines: closer hatching, cross-hatching, or a denser guilloché band. See <a href="ornaments.html#hatching">hatching tones</a>.</dd>
+    <dt>Forbidden</dt><dd>Cream, parchment, sepia, paper noise, gradients, shadows, glows, off-black panels, and <code>filter: invert()</code> on artwork.</dd>
+  </dl>
+</section>
+
+<section class="doc-section">
+  <header><h2>Engraved line weights</h2><span class="doc-num">§ 1.2</span></header>
+  <div class="doc-pair">
+    <div>
+      <div class="doc-weight"><span class="em-label">Hair</span><div class="doc-weight__bar" style="border-top-width:var(--em-hair)"></div><code>--em-hair</code></div>
+      <div class="doc-weight"><span class="em-label">Fine</span><div class="doc-weight__bar" style="border-top-width:var(--em-fine)"></div><code>--em-fine</code></div>
+      <div class="doc-weight"><span class="em-label">Line</span><div class="doc-weight__bar" style="border-top-width:var(--em-line)"></div><code>--em-line</code></div>
+      <div class="doc-weight"><span class="em-label">Heavy</span><div class="doc-weight__bar" style="border-top-width:var(--em-heavy)"></div><code>--em-heavy</code></div>
+    </div>
+    <table class="em-table">
+      <thead><tr><th>Token</th><th class="n">Day</th><th class="n">Night</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td><code>--em-hair</code></td><td class="n">0.75 px</td><td class="n">0.55 px</td><td>Guilloché, hatching, minor ticks</td></tr>
+        <tr><td><code>--em-fine</code></td><td class="n">1.0 px</td><td class="n">0.8 px</td><td>Rules, separators, major ticks</td></tr>
+        <tr><td><code>--em-line</code></td><td class="n">1.5 px</td><td class="n">1.25 px</td><td>Data lines, outlines, strip tops</td></tr>
+        <tr><td><code>--em-heavy</code></td><td class="n">2.5 px</td><td class="n">2.0 px</td><td>Plate frames, booktabs top &amp; bottom</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="doc-callout em-grid em-grid--golden em-grid--top">
+    <p class="em-label">Why Night is thinner</p>
+    <p style="margin:0">Bright strokes on a dark ground appear wider than the same strokes dark-on-light — <em>irradiation</em>, the effect engravers and type founders compensated for long before screens. Night reduces every engraved weight by about 20&thinsp;%, switches to greyscale antialiasing, adds a hair of letter-spacing, and pins Didone display faces to a lower optical size so their hairlines do not shimmer away. All ornaments use <code>vector-effect: non-scaling-stroke</code>, so these weights are exact screen pixels at any ornament size.</p>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Rules</h2><span class="doc-num">§ 1.3</span></header>
+  <div class="em-grid em-grid--even em-grid--top">
+    <div>
+      <p class="em-meta">.em-rule</p><hr class="em-rule">
+      <p class="em-meta">.em-rule--heavy</p><hr class="em-rule em-rule--heavy">
+      <p class="em-meta">.em-rule--double</p><hr class="em-rule em-rule--double">
+    </div>
+    <div>
+      <p class="em-meta">.em-rule--thin-thick</p><hr class="em-rule em-rule--thin-thick">
+      <p class="em-meta">.em-rule--dotted</p><hr class="em-rule em-rule--dotted">
+      <p class="em-meta">.em-rule--diamond</p><hr class="em-rule em-rule--diamond">
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Space &amp; plate</h2><span class="doc-num">§ 1.4</span></header>
+  <div class="doc-pair">
+    <table class="em-table">
+      <thead><tr><th>Token</th><th class="n">rem</th><th class="n">px</th><th>Typical use</th></tr></thead>
+      <tbody>
+        <tr><td><code>--em-s1</code></td><td class="n">0.25</td><td class="n">4</td><td>Label-to-value</td></tr>
+        <tr><td><code>--em-s2</code></td><td class="n">0.5</td><td class="n">8</td><td>Rule-to-text</td></tr>
+        <tr><td><code>--em-s3</code></td><td class="n">0.75</td><td class="n">12</td><td>List rhythm</td></tr>
+        <tr><td><code>--em-s4</code></td><td class="n">1</td><td class="n">16</td><td>Paragraph, column gutter</td></tr>
+        <tr><td><code>--em-s5</code></td><td class="n">1.5</td><td class="n">24</td><td>Block spacing</td></tr>
+        <tr><td><code>--em-s6</code></td><td class="n">2</td><td class="n">32</td><td>Grid gap, plate padding</td></tr>
+        <tr><td><code>--em-s7</code></td><td class="n">3</td><td class="n">48</td><td>Section break</td></tr>
+        <tr><td><code>--em-s8</code></td><td class="n">4.5</td><td class="n">72</td><td>Chapter break</td></tr>
+      </tbody>
+    </table>
+    <div>
+      <section class="em-sheet" style="margin:0" aria-label="Plate demonstration">
+        <header class="em-masthead"><span class="em-kicker">The Plate</span><span class="em-meta">.em-sheet</span></header>
+        <div data-em="scale" data-tail=".14" data-minor="2"></div>
+        <p style="margin-top:var(--em-s4)">A square plate: <code>--em-heavy</code> outer rule with a hair rule inset 9&thinsp;px, recalling the plate-mark pressed into paper by an etching press. No rounded corners.</p>
+        <p class="em-small" style="margin:0">Variants: <code>.em-sheet--single</code> (outer rule only), <code>.em-sheet--plain</code> (no frame).</p>
+      </section>
+      <p class="em-small" style="margin-top:var(--em-s4)">Grids: <code>.em-grid</code> (0.8 : 1.2 asymmetric), <code>--golden</code> (1 : 1.618), <code>--even</code>, <code>--three</code>. All collapse to one column below 760&thinsp;px.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="em-colophon doc-foot"><span>Retro-Ink · Engraved Modernism</span><span>I · Foundations</span><span class="em-push"><a href="typography.html">Next: Typography →</a></span></footer>
+</div>
+</body>
+</html>

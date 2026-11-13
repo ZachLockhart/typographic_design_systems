@@ -1,0 +1,5 @@
+/* Shared chrome for the example pages (not part of the design system). */
+.ex-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--em-s3); max-width: var(--em-sheet-max); margin: 0 auto var(--em-s4); }
+.ex-bar nav { display: flex; gap: var(--em-s4); }
+.ex-bar nav a { text-decoration: none; }
+.ex-bar nav a:hover { text-decoration: underline; }

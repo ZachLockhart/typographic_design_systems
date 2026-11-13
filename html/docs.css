@@ -1,0 +1,60 @@
+/* Documentation chrome for Engraved Modernism — layered on ../engraved-modernism/em.css */
+.doc { max-width: 1180px; margin: 0 auto; padding: var(--em-s5) var(--em-s5) var(--em-s8); }
+.doc-top { display: flex; flex-wrap: wrap; gap: var(--em-s3) var(--em-s5); align-items: center; justify-content: space-between; padding-bottom: var(--em-s3); }
+.doc-brand { display: flex; gap: var(--em-s3); align-items: baseline; text-decoration: none; }
+.doc-brand .em-kicker { font-size: var(--em-fs-md); }
+.doc-nav { display: flex; flex-wrap: wrap; gap: var(--em-s1) var(--em-s4); }
+.doc-nav a { font-family: var(--em-label); font-weight: var(--em-label-w); text-transform: uppercase; letter-spacing: var(--em-track); font-size: var(--em-fs-xs); text-decoration: none; padding: .2em 0; border-bottom: var(--em-fine) solid transparent; }
+.doc-nav a:hover { border-bottom-color: var(--em-ink); }
+.doc-nav a[aria-current="page"] { border-bottom: var(--em-heavy) solid var(--em-ink); }
+.doc-hero { padding: var(--em-s7) 0 var(--em-s5); }
+.doc-hero .em-lede { max-width: 36em; margin-top: var(--em-s4); }
+.doc-section { margin: var(--em-s8) 0 0; }
+.doc-section > header { display: flex; justify-content: space-between; align-items: baseline; gap: var(--em-s4); flex-wrap: wrap; border-bottom: var(--em-line) solid var(--em-ink); padding-bottom: var(--em-s2); margin-bottom: var(--em-s5); }
+.doc-section > header h2 { font: var(--em-display-w) var(--em-fs-xl)/1.1 var(--em-display); margin: 0; letter-spacing: -.015em; }
+.doc-section h3 { font: italic 500 var(--em-fs-lg)/1.2 var(--em-text); margin: var(--em-s6) 0 var(--em-s3); }
+.doc-num { font-family: var(--em-label); font-weight: var(--em-meta-w); letter-spacing: var(--em-track); font-size: var(--em-fs-xs); text-transform: uppercase; }
+.doc-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0; border-top: var(--em-fine) solid var(--em-ink); border-left: var(--em-fine) solid var(--em-ink); }
+.doc-cards > * { border-right: var(--em-fine) solid var(--em-ink); border-bottom: var(--em-fine) solid var(--em-ink); padding: var(--em-s4) var(--em-s4) var(--em-s5); min-width: 0; }
+.doc-cards a.doc-card { text-decoration: none; display: block; }
+.doc-cards a.doc-card:hover .em-heading { text-decoration: underline; text-decoration-thickness: var(--em-fine); text-underline-offset: .15em; }
+.doc-card .em-heading { font-size: var(--em-fs-lg); margin: var(--em-s2) 0; }
+.doc-card p { font-size: var(--em-fs-sm); margin: 0; }
+.doc-spec { display: grid; grid-template-columns: minmax(9rem, 14rem) minmax(0, 1fr); gap: var(--em-s3) var(--em-s5); align-items: baseline; }
+.doc-spec > dt { font-family: var(--em-label); font-weight: var(--em-label-w); text-transform: uppercase; letter-spacing: var(--em-track); font-size: var(--em-fs-xs); }
+.doc-spec > dd { margin: 0; }
+.doc-code { border: var(--em-fine) solid var(--em-ink); border-left-width: var(--em-heavy); padding: var(--em-s3) var(--em-s4); margin: var(--em-s3) 0 0; overflow-x: auto; font: .78rem/1.5 ui-monospace, 'SF Mono', Menlo, monospace; white-space: pre; letter-spacing: 0; background: var(--em-paper); color: var(--em-ink); }
+.doc-demo { border: var(--em-fine) dashed var(--em-ink); padding: var(--em-s5); }
+.doc-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--em-s5); align-items: start; }
+.doc-tri { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.doc-tri > * { padding: 0 var(--em-s5); border-left: var(--em-fine) solid var(--em-ink); min-width: 0; }
+.doc-tri > :first-child { border-left: 0; padding-left: 0; }
+.doc-tri > :last-child { padding-right: 0; }
+.doc-quad { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--em-s5); }
+.doc-swatch { border: var(--em-fine) solid var(--em-ink); }
+.doc-swatch__chip { height: 92px; border-bottom: var(--em-fine) solid var(--em-ink); }
+.doc-swatch__body { padding: var(--em-s2) var(--em-s3); }
+.doc-weight { display: grid; grid-template-columns: 7rem 1fr 6rem; gap: var(--em-s4); align-items: center; margin: var(--em-s2) 0; }
+.doc-weight__bar { border-top-style: solid; border-top-color: var(--em-ink); }
+.doc-callout { border-top: var(--em-heavy) solid var(--em-ink); border-bottom: var(--em-fine) solid var(--em-ink); padding: var(--em-s4) 0; margin: var(--em-s5) 0; }
+.doc-lab { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 340px); gap: var(--em-s6); align-items: start; }
+.doc-controls { display: grid; gap: var(--em-s3); }
+.doc-controls label { display: grid; grid-template-columns: 6.5rem 1fr 3rem; gap: var(--em-s3); align-items: center; }
+.doc-controls label > span:first-child { font-family: var(--em-label); font-weight: var(--em-label-w); text-transform: uppercase; letter-spacing: var(--em-track); font-size: var(--em-fs-xs); }
+.doc-controls output { font-variant-numeric: tabular-nums lining-nums; text-align: right; font-size: var(--em-fs-sm); }
+.doc-controls input[type=range] { accent-color: var(--em-ink); width: 100%; }
+.doc-controls select, .doc-btn { appearance: none; background: var(--em-paper); color: var(--em-ink); border: var(--em-fine) solid var(--em-ink); border-radius: 0; font: var(--em-label-w) var(--em-fs-xs)/1 var(--em-label); text-transform: uppercase; letter-spacing: var(--em-track); padding: .6em .8em; cursor: pointer; }
+.doc-btn:hover { background: var(--em-ink); color: var(--em-paper); }
+.doc-figure-label { margin-top: var(--em-s3); text-align: center; }
+.doc-foot { margin-top: var(--em-s8); }
+.doc-yes, .doc-no { font-size: var(--em-fs-sm); }
+.doc-yes::before { content: "✓ "; font-weight: 700; }
+.doc-no::before { content: "✗ "; font-weight: 700; }
+@media (max-width: 860px) {
+  .doc-pair, .doc-lab { grid-template-columns: 1fr; }
+  .doc-tri { grid-template-columns: 1fr; }
+  .doc-tri > * { border-left: 0; padding: var(--em-s5) 0; border-top: var(--em-fine) solid var(--em-ink); }
+  .doc-quad { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .doc-spec { grid-template-columns: 1fr; gap: var(--em-s1); }
+  .doc-spec > dd { margin-bottom: var(--em-s3); }
+}

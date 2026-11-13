@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technical Report — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<style>
+  .rpt { max-width: 880px; }
+  .rpt-title { display: grid; grid-template-columns: 1fr 150px; gap: var(--em-s6); align-items: center; }
+  .rpt-abstract { border-top: var(--em-fine) solid var(--em-ink); border-bottom: var(--em-fine) solid var(--em-ink); padding: var(--em-s4) 0; margin: var(--em-s6) 0; }
+  .rpt-abstract p { margin: 0; font-size: var(--em-fs-sm); }
+  .rpt-body { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: var(--em-s6); }
+  .rpt-margin { font-size: var(--em-fs-xs); line-height: 1.4; padding-top: .3em; }
+  .rpt-margin .em-label { display: block; font-size: var(--em-fs-xs); margin-bottom: var(--em-s1); }
+  @media (max-width: 760px) { .rpt-title, .rpt-body { grid-template-columns: 1fr; } .rpt-title [data-em] { max-width: 120px; } }
+  @media print { .rpt { max-width: none; } }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint" style="max-width:880px">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<article class="em-sheet rpt">
+  <header class="em-masthead"><span class="em-meta">Technical Memorandum TM-26-11</span><span class="em-meta">Issued 13 November 2026 · Draft for comment</span></header>
+  <hr class="em-rule em-rule--thin-thick" style="margin-top:var(--em-s2)">
+
+  <div class="rpt-title">
+    <div>
+      <p class="em-kicker">Detector Characterisation</p>
+      <h1 class="em-title" style="margin-top:var(--em-s3)">On the Thermal Behaviour of a Cooled Imaging Sensor</h1>
+      <p class="em-lede" style="margin-top:var(--em-s3)">A worked example of report typesetting in Engraved Modernism.</p>
+    </div>
+    <div data-em="guilloche" data-preset="seal"></div>
+  </div>
+
+  <section class="rpt-abstract">
+    <span class="em-label">Abstract</span>
+    <p>This memorandum demonstrates the system's report conventions: a thin-thick title rule, an abstract between fine rules, a single text column with marginalia, figures with small-capital references, a booktabs table and footnotes. <strong>All measurements are invented for demonstration</strong> and describe no real instrument.</p>
+  </section>
+
+  <div class="rpt-body">
+    <div class="em-prose" style="max-width:none">
+      <h2>1 · Introduction</h2>
+      <p class="em-dropcap">Every electronic detector generates a small current in the dark. Thermal agitation lifts electrons into the conduction band at a rate that climbs steeply with temperature, and those electrons are indistinguishable from the ones produced by light. Cooling the sensor is therefore the first defence of any long exposure.<span class="em-fn">1</span></p>
+      <p>We characterise that dependence across the operating range of a hypothetical cryostat, from −40 °C to +10 °C, and set out the consequences for exposure planning. The results appear as <span class="em-sc">Fig. 1</span> and <span class="em-sc">Table 1</span>.</p>
+
+      <h2>2 · Method</h2>
+      <p>The sensor was held at each set-point for 30 minutes before a series of eleven dark frames, each 600 s long, was recorded. The median of the series was taken per pixel to reject cosmic-ray events, and the mean of the median frame divided by the exposure time gives the dark current.<span class="em-fn">2</span></p>
+
+      <figure class="em-figure" style="margin:var(--em-s5) 0">
+        <div data-em="plot" data-title="Dark current against temperature (demonstration data)" data-points="0.002,0.003,0.004,0.006,0.009,0.014,0.021,0.032,0.049,0.074,0.112" data-xlabels="−40,−35,−30,−25,−20,−15,−10,−5,0,5,10" data-xname="Temperature °C" data-ylabel="e⁻ / px / s" data-unit="e⁻/px/s" data-height="230"></div>
+        <figcaption><span class="em-sc">Fig. 1</span> <em>Dark current against sensor temperature. The rate roughly doubles for every 8–9 °C of warming.</em></figcaption>
+      </figure>
+
+      <h2>3 · Results</h2>
+      <table class="em-table" style="margin:var(--em-s4) 0 var(--em-s5)">
+        <caption><span class="em-sc">Table 1</span> <em>Dark current and its share of read noise in a 600 s exposure</em></caption>
+        <thead><tr><th>Set-point</th><th class="n">Dark e⁻/px/s</th><th class="n">Dark e⁻ in 600 s</th><th class="n">Shot noise e⁻</th><th class="n">÷ read noise</th></tr></thead>
+        <tbody>
+          <tr><td>−40 °C</td><td class="n">0.002</td><td class="n">1.2</td><td class="n">1.10</td><td class="n">0.55</td></tr>
+          <tr><td>−30 °C</td><td class="n">0.004</td><td class="n">2.4</td><td class="n">1.55</td><td class="n">0.77</td></tr>
+          <tr><td>−20 °C</td><td class="n">0.009</td><td class="n">5.4</td><td class="n">2.32</td><td class="n">1.16</td></tr>
+          <tr><td>−10 °C</td><td class="n">0.021</td><td class="n">12.6</td><td class="n">3.55</td><td class="n">1.77</td></tr>
+          <tr><td>0 °C</td><td class="n">0.049</td><td class="n">29.4</td><td class="n">5.42</td><td class="n">2.71</td></tr>
+        </tbody>
+      </table>
+      <p>Below about −25 °C the dark-current shot noise in a ten-minute exposure falls beneath the 2.0 e⁻ read noise, and further cooling buys little. The cryostat's −31 °C hold point sits comfortably inside that regime.</p>
+
+      <h2>4 · Recommendation</h2>
+      <p>Operate at −30 °C or colder for exposures of ten minutes or longer. At shorter exposures the set-point may be relaxed to −20 °C, saving cryostat power with no measurable penalty.</p>
+
+      <div class="em-footnotes">
+        <ol>
+          <li>The same principle governed photographic plates, whose “fog” grew with temperature and age.</li>
+          <li>Median combination of eleven frames rejects any event present in fewer than six.</li>
+        </ol>
+      </div>
+    </div>
+
+    <aside class="rpt-margin">
+      <div class="em-stack">
+        <div><span class="em-label">Doubling interval</span>≈ 8.6 °C over the measured range.</div>
+        <div><span class="em-label">Read noise</span>2.0 e⁻ rms, assumed constant.</div>
+        <div data-em="dial" data-min="-40" data-max="10" data-value="-31" data-major="10" data-minor="2" data-title="Hold point" data-unit="°C" data-band="-20,10" style="max-width:170px"></div>
+        <div><span class="em-label">Status</span><span class="em-status em-status--warn">Draft</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="em-colophon"><span>TM-26-11</span><span>Page 1 of 1</span><span>Engraved Modernism · Report</span><span class="em-push">Demonstration data</span></footer>
+</article>
+</div>
+</body>
+</html>

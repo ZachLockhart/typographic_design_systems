@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Imaging Chain Plate — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<style>
+  .chain-steps > li { align-items: flex-start; }
+  .chain-steps > li > div { padding-top: .15em; }
+  .chain-steps p { margin: .1em 0 0; font-size: var(--em-fs-sm); }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<article class="em-sheet">
+  <header class="em-masthead"><span class="em-kicker">Field Notes</span><span class="em-meta">Optics · Sensor · Imaging &nbsp;<span class="em-plate">Plate IV</span></span></header>
+  <div data-em="scale" data-minor="2"></div>
+
+  <div class="em-grid em-grid--top">
+    <figure class="em-figure">
+      <div data-em="optics"></div>
+      <figcaption><span class="em-sc">Fig. 1</span> <em>Six-element objective (A–F) bringing a parallel bundle to focus on the sensor plane S. Schematic, not to scale.</em></figcaption>
+    </figure>
+    <div>
+      <h1 class="em-title">The Imaging Chain</h1>
+      <p class="em-lede" style="margin-top:var(--em-s2)">From photons to digital numbers.</p>
+      <ol class="em-steps chain-steps">
+        <li><div><span class="em-label">Scene radiance L(λ)</span><p>Light leaving the subject, per unit area, solid angle and wavelength.</p></div></li>
+        <li><div><span class="em-label">Optics — T, MTF</span><p>Transmission scales the signal; the modulation transfer function softens fine detail.</p></div></li>
+        <li><div><span class="em-label">Sensor — QE, full well</span><p>Photons become electrons with quantum efficiency QE, up to the well capacity.</p></div></li>
+        <li><div><span class="em-label">Readout — gain, noise</span><p>Charge is amplified and digitised; read noise sets the floor.</p></div></li>
+        <li><div><span class="em-label">Digital image — DN</span><p>Integers, one per pixel, ready for calibration.</p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <hr class="em-rule em-rule--double" style="margin-top:var(--em-s6)">
+
+  <div class="em-grid em-grid--golden em-grid--top">
+    <div>
+      <h2 class="em-heading">Quantum efficiency</h2>
+      <p class="em-small">The fraction of incident photons converted to electrons rises through the blue, peaks in the green and falls toward the silicon cut-off near 1100 nm.</p>
+      <div data-em="dial" data-min="0" data-max="1" data-value="0.83" data-major="0.1" data-minor="0.02" data-decimals="2" data-title="Peak QE" style="max-width:220px;margin:var(--em-s4) auto 0"></div>
+    </div>
+    <figure class="em-figure">
+      <div data-em="plot" data-title="Quantum efficiency against wavelength (illustrative)" data-points="0.18,0.34,0.52,0.66,0.76,0.82,0.83,0.80,0.74,0.66,0.56,0.45,0.34,0.24,0.15,0.08,0.03" data-xstart="350" data-xstep="45" data-xname="Wavelength nm" data-ylabel="QE" data-ymin="0" data-ymax="1" data-height="230"></div>
+      <div data-em="scale" data-from="350" data-to="1070" data-major="90" data-mid="45" data-minor="15" data-tail="0" style="margin-left:40px;margin-right:10px;margin-top:var(--em-s2)"></div>
+      <figcaption><span class="em-sc">Fig. 2</span> <em>Quantum efficiency, 350–1070 nm. Hover for values.</em></figcaption>
+    </figure>
+  </div>
+
+  <div class="em-metrics">
+    <div class="em-metric"><span class="em-label">MTF (50%)</span><span class="em-metric__value">0.32<small>cyc/px</small></span></div>
+    <div class="em-metric"><span class="em-label">Well depth</span><span class="em-metric__value">150<small>ke⁻</small></span></div>
+    <div class="em-metric"><span class="em-label">Read noise</span><span class="em-metric__value">2.0<small>e⁻</small></span></div>
+    <div class="em-metric"><span class="em-label">Gain</span><span class="em-metric__value">2.2<small>e⁻/ADU</small></span></div>
+  </div>
+  <footer class="em-colophon"><span>Field Notes</span><span>Vol. II</span><span>Plate IV</span><span class="em-push">All values illustrative</span></footer>
+</article>
+</div>
+</body>
+</html>

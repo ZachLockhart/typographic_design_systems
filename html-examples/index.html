@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Examples — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<style>
+  .ex-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: var(--em-line) solid var(--em-ink); }
+  .ex-item { display: grid; grid-template-columns: 110px 1fr; gap: var(--em-s4); padding: var(--em-s5) var(--em-s5) var(--em-s5) 0; border-bottom: var(--em-fine) solid var(--em-ink); text-decoration: none; align-items: center; }
+  .ex-item:nth-child(even) { border-left: var(--em-fine) solid var(--em-ink); padding-left: var(--em-s5); }
+  .ex-item:hover .em-heading { text-decoration: underline; text-decoration-thickness: var(--em-fine); text-underline-offset: .15em; }
+  .ex-item .em-heading { margin: var(--em-s1) 0; }
+  .ex-item p { margin: 0; font-size: var(--em-fs-sm); }
+  @media (max-width: 760px) { .ex-list { grid-template-columns: 1fr; } .ex-item:nth-child(even) { border-left: 0; padding-left: 0; } .ex-item { grid-template-columns: 80px 1fr; } }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint">
+  <nav><a class="em-meta" href="../html/index.html">← Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<main class="em-sheet">
+  <header class="em-masthead"><span class="em-kicker">Examples</span><span class="em-meta">Engraved Modernism · Second state</span></header>
+  <div data-em="ribbon" style="margin:var(--em-s2) 0 var(--em-s6)"></div>
+  <h1 class="em-display">Specimen Plates</h1>
+  <p class="em-lede" style="max-width:34em;margin:var(--em-s3) 0 var(--em-s6)">Four compositions built only from the system's stylesheet and ornament engine. Your theme and type choices carry across pages — switch them here or on any plate.</p>
+
+  <nav class="ex-list" aria-label="Examples">
+    <a class="ex-item" href="almanac.html"><div data-em="guilloche" data-preset="medallion"></div><div><span class="em-meta">Plate I</span><h2 class="em-heading">Almanac Leaf</h2><p>Daily leaf: dated medallion, quotation, sun, moon, weather and word of the day.</p></div></a>
+    <a class="ex-item" href="imaging-chain.html"><div data-em="optics"></div><div><span class="em-meta">Plate II</span><h2 class="em-heading">The Imaging Chain</h2><p>Engraved optical figure, numbered process, QE plot with wavelength scale, metric strip.</p></div></a>
+    <a class="ex-item" href="instrument-panel.html"><div data-em="dial" data-min="0" data-max="100" data-value="41" data-major="20" data-minor="5" data-show-value="false"></div><div><span class="em-meta">Plate III</span><h2 class="em-heading">Instrument Panel</h2><p>Dense dashboard: gauges, hatched plots, subsystem table with status glyphs, sky ephemeris.</p></div></a>
+    <a class="ex-item" href="report.html"><div data-em="guilloche" data-preset="seal"></div><div><span class="em-meta">Plate IV</span><h2 class="em-heading">Technical Report</h2><p>Long-form memorandum: abstract, drop cap, marginalia, figure, booktabs table, footnotes. Print-ready.</p></div></a>
+  </nav>
+
+  <p class="em-small" style="margin-top:var(--em-s6)">Reference v1 packages, preserved unchanged: <a href="../retro-ink-day/index.html">Retro-Ink Day</a> · <a href="../retro-ink-night/index.html">Retro-Ink Night</a>.</p>
+  <footer class="em-colophon"><span>Retro-Ink</span><span>Engraved Modernism</span><span class="em-push">All values illustrative</span></footer>
+</main>
+</div>
+</body>
+</html>

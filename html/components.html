@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engraved Modernism — Components</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="docs.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+</head>
+<body class="em">
+<div class="doc">
+<header class="doc-top em-noprint">
+  <a class="doc-brand" href="index.html"><span class="em-kicker">Retro-Ink</span><span class="em-sc">Engraved Modernism</span></a>
+  <nav class="doc-nav" aria-label="Documentation"><a href="index.html">Overview</a><a href="foundations.html">Foundations</a><a href="typography.html">Typography</a><a href="ornaments.html">Ornaments</a><a href="components.html" aria-current="page">Components</a><a href="../html-examples/index.html">Examples</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</header>
+<div data-em="scale" data-from="0" data-to="100" data-major="10" data-minor="2"></div>
+
+<section class="doc-hero">
+  <p class="em-kicker">IV · Components</p>
+  <h1 class="em-display" style="margin-top:var(--em-s3)">The Compositor's Case</h1>
+  <p class="em-lede">Every component with its markup. All values shown are illustrative.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Masthead &amp; scale</h2><span class="doc-num">§ 4.1</span></header>
+  <div class="doc-pair">
+    <div class="doc-demo">
+      <header class="em-masthead"><span class="em-kicker">November 2026</span><span class="em-meta">Leaf 315 of 365 · Printed 05:00</span></header>
+      <div data-em="scale" data-minor="2"></div>
+    </div>
+<pre class="doc-code">&lt;header class="em-masthead"&gt;
+  &lt;span class="em-kicker"&gt;November 2026&lt;/span&gt;
+  &lt;span class="em-meta"&gt;Leaf 315 of 365&lt;/span&gt;
+&lt;/header&gt;
+&lt;div data-em="scale" data-minor="2"&gt;&lt;/div&gt;</pre>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Medallion with face</h2><span class="doc-num">§ 4.2</span></header>
+  <div class="doc-pair">
+    <div class="doc-demo">
+      <div class="em-medallion" style="--em-medallion:260px">
+        <div data-em="guilloche" data-preset="medallion"></div>
+        <div class="em-medallion__face"><div><span class="em-numeral" style="font-size:5.4rem">11</span><br><span class="em-meta">Wed</span></div></div>
+      </div>
+    </div>
+<pre class="doc-code">&lt;div class="em-medallion" style="--em-medallion:260px"&gt;
+  &lt;div data-em="guilloche" data-preset="medallion"&gt;&lt;/div&gt;
+  &lt;div class="em-medallion__face"&gt;
+    &lt;span class="em-numeral"&gt;11&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Metric strip</h2><span class="doc-num">§ 4.3</span></header>
+  <div class="doc-demo">
+    <div class="em-metrics" style="margin-top:0">
+      <div class="em-metric"><span class="em-label">MTF (50%)</span><span class="em-metric__value">0.32<small>cyc/px</small></span></div>
+      <div class="em-metric"><span class="em-label">Well depth</span><span class="em-metric__value">150<small>ke⁻</small></span></div>
+      <div class="em-metric"><span class="em-label">Read noise</span><span class="em-metric__value">2.0<small>e⁻</small></span></div>
+      <div class="em-metric"><span class="em-label">Gain</span><span class="em-metric__value">2.2<small>e⁻/ADU</small></span></div>
+    </div>
+  </div>
+<pre class="doc-code">&lt;div class="em-metrics" style="--em-cols:4"&gt;
+  &lt;div class="em-metric"&gt;
+    &lt;span class="em-label"&gt;Gain&lt;/span&gt;
+    &lt;span class="em-metric__value"&gt;2.2&lt;small&gt;e⁻/ADU&lt;/small&gt;&lt;/span&gt;
+  &lt;/div&gt; …
+&lt;/div&gt;</pre>
+</section>
+
+<section class="doc-section">
+  <header><h2>Numbered rings &amp; leaders</h2><span class="doc-num">§ 4.4</span></header>
+  <div class="doc-pair">
+    <div class="doc-demo">
+      <ol class="em-steps">
+        <li><span class="em-label">Scene radiance L(λ)</span></li>
+        <li><span class="em-label">Optics (T, MTF)</span></li>
+        <li><span class="em-label">Sensor (QE, well)</span></li>
+      </ol>
+    </div>
+    <div class="doc-demo">
+      <ul class="em-leaders">
+        <li><span>Sunrise</span><span class="em-leader"></span><span class="em-num">07:09</span></li>
+        <li><span>Sunset</span><span class="em-leader"></span><span class="em-num">16:37</span></li>
+        <li><span>Day length</span><span class="em-leader"></span><span class="em-num">9 h 28 m</span></li>
+      </ul>
+    </div>
+  </div>
+<pre class="doc-code">&lt;ol class="em-steps"&gt;&lt;li&gt;&lt;span class="em-label"&gt;Optics&lt;/span&gt;&lt;/li&gt;…&lt;/ol&gt;
+
+&lt;ul class="em-leaders"&gt;
+  &lt;li&gt;&lt;span&gt;Sunrise&lt;/span&gt;&lt;span class="em-leader"&gt;&lt;/span&gt;&lt;span class="em-num"&gt;07:09&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+</section>
+
+<section class="doc-section">
+  <header><h2>Booktabs table</h2><span class="doc-num">§ 4.5</span></header>
+  <div class="doc-demo">
+    <table class="em-table">
+      <caption><span class="em-sc">Table 2</span> <em>Detector characteristics (illustrative)</em></caption>
+      <thead><tr><th>Channel</th><th class="n">QE</th><th class="n">Read noise e⁻</th><th class="n">Dark e⁻/s</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Blue</td><td class="n">0.71</td><td class="n">2.04</td><td class="n">0.0012</td><td><span class="em-status em-status--ok">Nominal</span></td></tr>
+        <tr><td>Green</td><td class="n">0.83</td><td class="n">1.98</td><td class="n">0.0011</td><td><span class="em-status em-status--ok">Nominal</span></td></tr>
+        <tr><td>Red</td><td class="n">0.64</td><td class="n">2.31</td><td class="n">0.0019</td><td><span class="em-status em-status--warn">Watch</span></td></tr>
+        <tr><td>Near-IR</td><td class="n">0.22</td><td class="n">3.80</td><td class="n">0.0140</td><td><span class="em-status em-status--fault">Fault</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+<pre class="doc-code">&lt;table class="em-table"&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Channel&lt;/th&gt;&lt;th class="n"&gt;QE&lt;/th&gt;…&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Blue&lt;/td&gt;&lt;td class="n"&gt;0.71&lt;/td&gt;…
+    &lt;td&gt;&lt;span class="em-status em-status--ok"&gt;Nominal&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre>
+  <p class="em-small" style="margin-top:var(--em-s3)">Heavy rule above the head and below the body, a fine rule under the head, dotted hair rules between rows. Status is a word plus a glyph — filled ring, hatched ring, solid lozenge — never ink alone.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Plot</h2><span class="doc-num">§ 4.6</span></header>
+  <div class="doc-demo">
+    <div data-em="plot" data-title="Dark current against sensor temperature (illustrative)" data-points="0.002,0.003,0.004,0.006,0.009,0.014,0.021,0.032,0.049,0.074,0.112" data-xlabels="−40,−35,−30,−25,−20,−15,−10,−5,0,5,10" data-xname="Temperature °C" data-ylabel="e⁻ / px / s" data-unit="e⁻/px/s" data-height="240"></div>
+    <p class="em-small" style="margin:var(--em-s3) 0 0"><span class="em-sc">Fig. 4</span> <em>Dark current roughly doubles every 8–9 °C. Hover for values; a data table is provided for screen readers.</em></p>
+  </div>
+<pre class="doc-code">&lt;div data-em="plot" data-title="Dark current vs temperature"
+     data-points="0.002,0.003,…" data-xlabels="−40,−35,…"
+     data-ylabel="e⁻ / px / s" data-unit="e⁻/px/s" data-height="240"&gt;&lt;/div&gt;</pre>
+  <p class="em-small" style="margin-top:var(--em-s3)">Single series by design: one ink cannot distinguish series by colour. Compare series with small multiples, or with hatch angle plus direct labels.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Figure, note &amp; footnotes</h2><span class="doc-num">§ 4.7</span></header>
+  <div class="doc-pair">
+    <div class="doc-demo">
+      <figure class="em-figure"><div data-em="moon" data-phase="0.18" style="max-width:120px"></div><figcaption><span class="em-sc">Fig. 5</span> <em>Waxing crescent, shadow engraved.</em></figcaption></figure>
+    </div>
+    <div class="doc-demo">
+      <p class="em-note"><span class="em-label">Note</span>Values in this panel are illustrative and do not describe any real instrument.<span class="em-fn">1</span></p>
+      <div class="em-footnotes"><ol><li>After the conventions of nineteenth-century observatory reports.</li></ol></div>
+    </div>
+  </div>
+<pre class="doc-code">&lt;figure class="em-figure"&gt;…&lt;figcaption&gt;&lt;span class="em-sc"&gt;Fig. 5&lt;/span&gt; &lt;em&gt;…&lt;/em&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p class="em-note"&gt;&lt;span class="em-label"&gt;Note&lt;/span&gt;…&lt;span class="em-fn"&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;div class="em-footnotes"&gt;&lt;ol&gt;&lt;li&gt;…&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</pre>
+</section>
+
+<section class="doc-section">
+  <header><h2>Plate number &amp; colophon</h2><span class="doc-num">§ 4.8</span></header>
+  <div class="doc-demo">
+    <p><span class="em-plate em-label">Plate IV</span></p>
+    <footer class="em-colophon"><span>Field Notes</span><span>Vol. II</span><span>Optics</span><span class="em-push">Printed 05:00</span></footer>
+  </div>
+<pre class="doc-code">&lt;span class="em-plate em-label"&gt;Plate IV&lt;/span&gt;
+&lt;footer class="em-colophon"&gt;&lt;span&gt;Field Notes&lt;/span&gt;&lt;span&gt;Vol. II&lt;/span&gt;&lt;span class="em-push"&gt;Printed 05:00&lt;/span&gt;&lt;/footer&gt;</pre>
+</section>
+
+<footer class="em-colophon doc-foot"><span>Retro-Ink · Engraved Modernism</span><span>IV · Components</span><span class="em-push"><a href="../html-examples/index.html">Next: Examples →</a></span></footer>
+</div>
+</body>
+</html>

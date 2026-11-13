@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engraved Modernism — Ornaments</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="docs.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<style>
+  .moons { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--em-s4); text-align: center; }
+  .moons [data-em] { max-width: 92px; margin: 0 auto var(--em-s2); }
+  .tones { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--em-s3); }
+  .dials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--em-s6); }
+  .dials [data-em] { max-width: 260px; margin: 0 auto; }
+  @media (max-width: 760px) { .moons { grid-template-columns: repeat(4, 1fr); } .tones { grid-template-columns: repeat(3, 1fr); } .dials { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="em">
+<div class="doc">
+<header class="doc-top em-noprint">
+  <a class="doc-brand" href="index.html"><span class="em-kicker">Retro-Ink</span><span class="em-sc">Engraved Modernism</span></a>
+  <nav class="doc-nav" aria-label="Documentation"><a href="index.html">Overview</a><a href="foundations.html">Foundations</a><a href="typography.html">Typography</a><a href="ornaments.html" aria-current="page">Ornaments</a><a href="components.html">Components</a><a href="../html-examples/index.html">Examples</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</header>
+<div data-em="ribbon"></div>
+
+<section class="doc-hero">
+  <p class="em-kicker">III · Ornaments</p>
+  <h1 class="em-display" style="margin-top:var(--em-s3)">Engine-Turned Geometry</h1>
+  <p class="em-lede">Guilloché was cut by a rose engine: a lathe whose cam rocks the work as it turns, so the graver traces phase-shifted waves. These ornaments are computed the same way, in the page's current ink.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Medallions</h2><span class="doc-num">§ 3.1</span></header>
+  <div class="doc-quad">
+    <figure class="em-figure"><div data-em="guilloche" data-preset="v1"></div><figcaption class="em-center"><span class="em-sc">v1</span> <em>reference geometry — one arc family, ring-clipped</em></figcaption></figure>
+    <figure class="em-figure"><div data-em="guilloche" data-preset="medallion"></div><figcaption class="em-center"><span class="em-sc">medallion</span> <em>open face for a numeral</em></figcaption></figure>
+    <figure class="em-figure"><div data-em="guilloche" data-preset="seal"></div><figcaption class="em-center"><span class="em-sc">seal</span> <em>closed, rope band + rosette</em></figcaption></figure>
+    <figure class="em-figure"><div data-em="guilloche" data-preset="band" data-k="36" data-n="18"></div><figcaption class="em-center"><span class="em-sc">band</span> <em>a single deep lattice ring</em></figcaption></figure>
+  </div>
+  <div class="doc-pair" style="margin-top:var(--em-s6)">
+    <figure class="em-figure"><div data-em="guilloche" data-preset="rosette" style="max-width:360px;margin:auto"></div><figcaption class="em-center"><span class="em-sc">rosette</span> <em>hypotrochoid R 12 · r 5 · d 4.2, three copies</em></figcaption></figure>
+    <div>
+      <p>Anatomy of the <code>medallion</code>, from the outside in — the layering follows banknote and watch-dial practice:</p>
+      <ol class="em-steps">
+        <li><span>Heavy rim + hair rule</span></li>
+        <li><span>Tick ring — 180 divisions, every fifth long</span></li>
+        <li><span>Lattice band: 14 waves, 30 lobes, amplitude breathing ×6</span></li>
+        <li><span>Double rule, then a ring of 90 beads</span></li>
+        <li><span>Open face — or, in the <code>seal</code>, a rope band and rosette</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Guilloché laboratory</h2><span class="doc-num">§ 3.2</span></header>
+  <div class="doc-lab">
+    <div id="lab-out" data-em="guilloche" data-preset="band" style="max-width:520px;margin:auto"></div>
+    <form class="doc-controls" id="lab" onsubmit="return false">
+      <label><span>Preset</span><select name="preset"><option>band</option><option>medallion</option><option>seal</option><option>rosette</option></select><span></span></label>
+      <label><span>Lobes k</span><input type="range" name="k" min="6" max="72" step="1" value="36"><output>36</output></label>
+      <label><span>Waves n</span><input type="range" name="n" min="2" max="36" step="1" value="18"><output>18</output></label>
+      <label><span>Amplitude</span><input type="range" name="amp" min="2" max="40" step="1" value="26"><output>26</output></label>
+      <label><span>Breathing</span><input type="range" name="mod" min="0" max="1" step="0.05" value="0.35"><output>0.35</output></label>
+      <label><span>Breath ×</span><input type="range" name="modK" min="0" max="16" step="1" value="6"><output>6</output></label>
+      <label><span>Rosette R</span><input type="range" name="R" min="3" max="24" step="1" value="12"><output>12</output></label>
+      <label><span>Rosette r</span><input type="range" name="r" min="1" max="15" step="1" value="5"><output>5</output></label>
+      <label><span>Pen d</span><input type="range" name="d" min="0.5" max="12" step="0.1" value="4.2"><output>4.2</output></label>
+      <label><span>Copies</span><input type="range" name="copies" min="1" max="8" step="1" value="3"><output>3</output></label>
+      <div style="display:flex;gap:var(--em-s3);flex-wrap:wrap;margin-top:var(--em-s2)">
+        <button type="button" class="doc-btn" id="lab-dl">Download SVG</button>
+        <button type="button" class="doc-btn" id="lab-copy">Copy markup</button>
+      </div>
+      <p class="em-small" style="margin:0">Band controls apply to <code>band</code>, <code>medallion</code>, <code>seal</code>; rosette controls to <code>rosette</code> and the <code>seal</code> centre. Downloaded SVGs draw in <code>currentColor</code>.</p>
+      <pre class="doc-code" id="lab-code" style="white-space:pre-wrap"></pre>
+    </form>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Instrument scales</h2><span class="doc-num">§ 3.3</span></header>
+  <p class="em-small">Drawn at the element's true pixel width and redrawn on resize — the diamond and every tick stay exact. Resize the window to see.</p>
+  <p class="em-meta" style="margin-top:var(--em-s5)">data-em="scale" — default with dotted tail</p>
+  <div data-em="scale" data-minor="2"></div>
+  <p class="em-meta" style="margin-top:var(--em-s5)">data-labels="true" data-index="62"</p>
+  <div data-em="scale" data-labels="true" data-index="62" data-minor="1"></div>
+  <p class="em-meta" style="margin-top:var(--em-s5)">data-from="380" data-to="780" data-major="50" data-minor="10" data-tail="0" data-labels="true" — wavelength, nm</p>
+  <div data-em="scale" data-from="380" data-to="780" data-major="50" data-minor="10" data-mid="25" data-tail="0" data-labels="true"></div>
+  <p class="em-meta" style="margin-top:var(--em-s5)">data-em="ribbon" — banknote edge</p>
+  <div data-em="ribbon"></div>
+  <p class="em-meta" style="margin-top:var(--em-s5)">data-em="ribbon" data-n="5" data-wavelength="16" data-spread=".5" — rope</p>
+  <div data-em="ribbon" data-n="5" data-wavelength="16" data-spread=".5"></div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Dials</h2><span class="doc-num">§ 3.4</span></header>
+  <div class="dials">
+    <figure class="em-figure"><div data-em="dial" data-min="0" data-max="100" data-value="62" data-major="10" data-minor="2" data-band="80,100" data-title="Humidity" data-unit="%"></div><figcaption class="em-center"><span class="em-sc">Fig. a</span> <em>hatched caution band 80–100</em></figcaption></figure>
+    <figure class="em-figure"><div data-em="dial" data-min="-40" data-max="20" data-value="-12.5" data-major="10" data-minor="2" data-decimals="0" data-title="CCD temp" data-unit="°C"></div><figcaption class="em-center"><span class="em-sc">Fig. b</span> <em>negative range</em></figcaption></figure>
+    <figure class="em-figure"><div data-em="dial" data-min="0" data-max="1" data-value="0.32" data-major="0.1" data-minor="0.02" data-decimals="1" data-title="MTF" data-band="0,0.15"></div><figcaption class="em-center"><span class="em-sc">Fig. c</span> <em>fractional scale</em></figcaption></figure>
+  </div>
+  <p class="em-small em-center" style="margin-top:var(--em-s4)">Values are illustrative. Each dial carries an accessible label stating title, value and range.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Lunar phases</h2><span class="doc-num">§ 3.5</span></header>
+  <div class="moons">
+    <div><div data-em="moon" data-phase="0.04"></div><span class="em-meta">0.04</span></div>
+    <div><div data-em="moon" data-phase="0.15"></div><span class="em-meta">0.15</span></div>
+    <div><div data-em="moon" data-phase="0.25"></div><span class="em-meta">First qtr</span></div>
+    <div><div data-em="moon" data-phase="0.4"></div><span class="em-meta">0.40</span></div>
+    <div><div data-em="moon" data-phase="0.5"></div><span class="em-meta">Full</span></div>
+    <div><div data-em="moon" data-phase="0.75"></div><span class="em-meta">Last qtr</span></div>
+    <div><div data-em="moon" data-phase="0.9" data-angle="-30"></div><span class="em-meta">0.90 · 30°</span></div>
+  </div>
+  <p class="em-small" style="margin-top:var(--em-s4)">The shadow is engraved, the lit limb is left as paper — the convention of nineteenth-century selenographic plates. <code>data-phase</code> 0–1, <code>data-angle</code> for hatch direction, <code>data-spacing</code> for density.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Engraved figures</h2><span class="doc-num">§ 3.6</span></header>
+  <div class="em-grid em-grid--golden">
+    <div>
+      <p>Section hatching alternates direction between adjacent elements and grows denser toward each element's leading surface, the way an engraver models curvature with line spacing. Rays are hair lines; the focal point is a solid ink dot; callouts use italic text-face capitals on leader lines.</p>
+      <p class="em-small">The figure is a schematic, not a ray trace.</p>
+    </div>
+    <figure class="em-figure"><div data-em="optics"></div><figcaption><span class="em-sc">Fig. 1</span> <em>Six-element objective, converging on the sensor plane S.</em></figcaption></figure>
+  </div>
+</section>
+
+<section class="doc-section" id="hatching">
+  <header><h2>Hatching tones</h2><span class="doc-num">§ 3.7</span></header>
+  <p class="em-small">The system's only “greys”. Tone is a function of line spacing — never of colour.</p>
+  <div class="tones">
+    <div><div data-em="hatch" data-spacing="9"></div><span class="em-meta">10 %</span></div>
+    <div><div data-em="hatch" data-spacing="6"></div><span class="em-meta">20 %</span></div>
+    <div><div data-em="hatch" data-spacing="4"></div><span class="em-meta">35 %</span></div>
+    <div><div data-em="hatch" data-spacing="2.6"></div><span class="em-meta">50 %</span></div>
+    <div><div data-em="hatch" data-spacing="3.4" data-cross="true"></div><span class="em-meta">70 % cross</span></div>
+    <div><div data-em="hatch" data-spacing="2" data-spacing-end="8" data-angle="0"></div><span class="em-meta">Graded</span></div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Reference</h2><span class="doc-num">§ 3.8</span></header>
+  <table class="em-table">
+    <thead><tr><th>data-em</th><th>Options (data-*)</th><th>Sizing</th></tr></thead>
+    <tbody>
+      <tr><td><code>guilloche</code></td><td>preset (medallion · seal · band · rosette · v1), k, n, amp, mod, mod-k, R, r, d, copies, label</td><td>Square; set width</td></tr>
+      <tr><td><code>scale</code></td><td>from, to, major, mid, minor, labels, wrap (e.g. 24 for clock hours), index, tail (0–0.4), label</td><td>Full width; 30 / 44 px tall</td></tr>
+      <tr><td><code>ribbon</code></td><td>n, wavelength, mod, mod-k, spread</td><td>Full width; 26 px tall</td></tr>
+      <tr><td><code>dial</code></td><td>min, max, value, major, minor, band "lo,hi", title, unit, decimals, show-value</td><td>Square; set width</td></tr>
+      <tr><td><code>moon</code></td><td>phase (0–1), angle, spacing</td><td>Square; set width</td></tr>
+      <tr><td><code>optics</code></td><td>label</td><td>13 : 7.5; set width</td></tr>
+      <tr><td><code>plot</code></td><td>points, xlabels | xstart + xstep, ymin, ymax, yticks, ylabel, unit, title, height, hatch</td><td>Full width; height</td></tr>
+      <tr><td><code>hatch</code></td><td>spacing, spacing-end, angle, cross, frame, height</td><td>Full width; height</td></tr>
+    </tbody>
+  </table>
+  <p class="em-small" style="margin-top:var(--em-s3)">Static exports: <code>node engraved-modernism/tools/export-svg.js</code> writes the presets to <code>engraved-modernism/assets/</code>.</p>
+</section>
+
+<footer class="em-colophon doc-foot"><span>Retro-Ink · Engraved Modernism</span><span>III · Ornaments</span><span class="em-push"><a href="components.html">Next: Components →</a></span></footer>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('lab'), out = document.getElementById('lab-out'), code = document.getElementById('lab-code');
+  const map = { modK: 'mod-k' };
+  function opts() {
+    const o = { preset: form.preset.value };
+    form.querySelectorAll('input[type=range]').forEach((i) => { o[i.name] = parseFloat(i.value); i.nextElementSibling.value = i.value; });
+    return o;
+  }
+  function update() {
+    const o = opts();
+    Object.keys(out.dataset).forEach((k) => { if (k !== 'em') delete out.dataset[k]; });
+    Object.entries(o).forEach(([k, v]) => { out.dataset[k] = v; });
+    EM.renderNode(out);
+    const attrs = Object.entries(o).map(([k, v]) => `data-${map[k] || k}="${v}"`).join(' ');
+    code.textContent = `<div data-em="guilloche" ${attrs}></div>`;
+  }
+  form.addEventListener('input', update);
+  document.getElementById('lab-dl').addEventListener('click', () => {
+    const o = opts(), svg = EM.standalone('guilloche', o, 400, 400, 'currentColor');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+    a.download = `guilloche-${o.preset}-k${o.k}-n${o.n}.svg`;
+    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+  document.getElementById('lab-copy').addEventListener('click', (e) => {
+    navigator.clipboard && navigator.clipboard.writeText(code.textContent).then(() => { e.target.textContent = 'Copied'; setTimeout(() => (e.target.textContent = 'Copy markup'), 1400); });
+  });
+  update();
+});
+</script>
+</body>
+</html>

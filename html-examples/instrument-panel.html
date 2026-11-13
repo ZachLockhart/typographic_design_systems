@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Instrument Panel — Engraved Modernism</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="examples.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<style>
+  .panel-dials { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: var(--em-line) solid var(--em-ink); border-bottom: var(--em-fine) solid var(--em-ink); }
+  .panel-dials > figure { margin: 0; padding: var(--em-s4) var(--em-s4) var(--em-s3); border-left: var(--em-fine) solid var(--em-ink); text-align: center; }
+  .panel-dials > figure:first-child { border-left: 0; }
+  .panel-dials [data-em] { max-width: 210px; margin: 0 auto; }
+  .panel-plots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--em-s6); margin-top: var(--em-s6); }
+  .panel-side { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--em-s6); margin-top: var(--em-s6); align-items: start; }
+  .panel-sky { display: grid; grid-template-columns: 96px 1fr; gap: var(--em-s4); align-items: center; }
+  @media (max-width: 900px) { .panel-dials { grid-template-columns: repeat(2, 1fr); } .panel-dials > figure:nth-child(3) { border-left: 0; } .panel-dials > figure:nth-child(n+3) { border-top: var(--em-fine) solid var(--em-ink); } }
+  @media (max-width: 760px) { .panel-plots, .panel-side { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="em">
+<div class="em-page">
+<div class="ex-bar em-noprint">
+  <nav><a class="em-meta" href="index.html">← Examples</a><a class="em-meta" href="../html/index.html">Documentation</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</div>
+
+<main class="em-sheet">
+  <header class="em-masthead">
+    <div><span class="em-kicker">Spectrograph · Dome II</span></div>
+    <span class="em-meta">Night of 12–13 Nov · UT 09:42 · Demonstration data</span>
+  </header>
+  <div data-em="scale" data-from="18" data-to="30" data-major="1" data-mid="0.5" data-minor="0.25" data-labels="true" data-wrap="24" data-index="27.7" data-tail="0" data-label="Night progress, 18:00 to 06:00 local; now 03:42"></div>
+
+  <section class="panel-dials" aria-label="Environmental gauges">
+    <figure><div data-em="dial" data-min="-40" data-max="20" data-value="-31.4" data-major="10" data-minor="2" data-decimals="1" data-title="Detector" data-unit="°C" data-band="0,20"></div></figure>
+    <figure><div data-em="dial" data-min="0" data-max="100" data-value="41" data-major="10" data-minor="2" data-title="Humidity" data-unit="%" data-band="85,100"></div></figure>
+    <figure><div data-em="dial" data-min="0" data-max="40" data-value="12" data-major="5" data-minor="1" data-title="Wind" data-unit="km/h" data-band="30,40"></div></figure>
+    <figure><div data-em="dial" data-min="0" data-max="3" data-value="0.9" data-major="0.5" data-minor="0.1" data-decimals="1" data-title="Seeing" data-unit="″" data-band="2,3"></div></figure>
+  </section>
+
+  <div class="panel-plots">
+    <figure class="em-figure">
+      <div class="em-masthead"><span class="em-label">Detector temperature</span><span class="em-meta">°C · hourly</span></div>
+      <div data-em="plot" data-title="Detector temperature by hour (demonstration data)" data-points="-12,-18.5,-23.9,-27.6,-29.8,-30.9,-31.3,-31.4,-31.4,-31.4" data-xlabels="18h,19h,20h,21h,22h,23h,00h,01h,02h,03h" data-xname="Hour" data-ylabel="°C" data-unit="°C" data-height="200" style="margin-top:var(--em-s2)"></div>
+    </figure>
+    <figure class="em-figure">
+      <div class="em-masthead"><span class="em-label">Sky transparency</span><span class="em-meta">fraction · hourly</span></div>
+      <div data-em="plot" data-title="Sky transparency by hour (demonstration data)" data-points="0.62,0.71,0.78,0.84,0.88,0.86,0.81,0.83,0.87,0.9" data-xlabels="18h,19h,20h,21h,22h,23h,00h,01h,02h,03h" data-xname="Hour" data-ylabel="fraction" data-ymin="0.5" data-ymax="1" data-height="200" data-hatch="3.4" style="margin-top:var(--em-s2)"></div>
+    </figure>
+  </div>
+
+  <div class="panel-side">
+    <table class="em-table">
+      <caption><span class="em-label">Subsystems</span></caption>
+      <thead><tr><th>Unit</th><th>Mode</th><th class="n">Value</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Cryostat</td><td>Hold</td><td class="n">−31.4 °C</td><td><span class="em-status em-status--ok">Nominal</span></td></tr>
+        <tr><td>Grating</td><td>Order 2</td><td class="n">612.0 nm</td><td><span class="em-status em-status--ok">Nominal</span></td></tr>
+        <tr><td>Slit</td><td>Fixed</td><td class="n">0.80 ″</td><td><span class="em-status em-status--ok">Nominal</span></td></tr>
+        <tr><td>Guider</td><td>Closed loop</td><td class="n">0.21 ″ rms</td><td><span class="em-status em-status--warn">Watch</span></td></tr>
+        <tr><td>Dome shutter</td><td>Open</td><td class="n">—</td><td><span class="em-status em-status--ok">Nominal</span></td></tr>
+        <tr><td>Calibration lamp</td><td>Off</td><td class="n">—</td><td><span class="em-status em-status--fault">Fault</span></td></tr>
+      </tbody>
+    </table>
+    <section>
+      <div class="em-label" style="margin-bottom:var(--em-s3)">Sky</div>
+      <div class="panel-sky">
+        <div data-em="moon" data-phase="0.1"></div>
+        <ul class="em-leaders em-small">
+          <li><span>Moon</span><span class="em-leader"></span><span class="em-num">10 % lit</span></li>
+          <li><span>Moonset</span><span class="em-leader"></span><span class="em-num">19:58</span></li>
+          <li><span>Astro. dawn</span><span class="em-leader"></span><span class="em-num">05:31</span></li>
+          <li><span>Airmass</span><span class="em-leader"></span><span class="em-num">1.18</span></li>
+        </ul>
+      </div>
+      <p class="em-note" style="margin-top:var(--em-s5)"><span class="em-label">Log</span>03:12 — guider residuals rising; check wind shake. Calibration lamp did not ignite at 02:50.</p>
+    </section>
+  </div>
+
+  <footer class="em-colophon"><span>Spectrograph Control</span><span>Dome II</span><span>Panel v2</span><span class="em-push">Demonstration data — not a live instrument</span></footer>
+</main>
+</div>
+</body>
+</html>

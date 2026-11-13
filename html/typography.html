@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engraved Modernism — Typography</title>
+<link rel="stylesheet" href="../engraved-modernism/em.css">
+<link rel="stylesheet" href="docs.css">
+<script src="../engraved-modernism/em-ornaments.js" defer></script>
+<style>
+  .spec .em-title { font-size: clamp(2rem, 3.4vw, 2.75rem); }
+  .spec .em-quote { font-size: clamp(1.35rem, 2vw, 1.7rem); }
+  .spec .em-metrics { --em-cols: 3; margin-top: var(--em-s5); }
+  .spec .em-metric__value { font-size: 1.2rem; }
+  .spec-name { display: flex; justify-content: space-between; align-items: baseline; border-bottom: var(--em-heavy) solid var(--em-ink); padding-bottom: var(--em-s2); margin-bottom: var(--em-s4); }
+</style>
+</head>
+<body class="em">
+<div class="doc">
+<header class="doc-top em-noprint">
+  <a class="doc-brand" href="index.html"><span class="em-kicker">Retro-Ink</span><span class="em-sc">Engraved Modernism</span></a>
+  <nav class="doc-nav" aria-label="Documentation"><a href="index.html">Overview</a><a href="foundations.html">Foundations</a><a href="typography.html" aria-current="page">Typography</a><a href="ornaments.html">Ornaments</a><a href="components.html">Components</a><a href="../html-examples/index.html">Examples</a></nav>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+</header>
+<div data-em="scale" data-from="0" data-to="100" data-major="10" data-minor="2"></div>
+
+<section class="doc-hero">
+  <p class="em-kicker">II · Typography</p>
+  <h1 class="em-display" style="margin-top:var(--em-s3)">Three Candidate Sets</h1>
+  <p class="em-lede">The same specimen set three ways. Each pairs a display face, a text face and a condensed label face; the switch in the header applies any of them to the whole site.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Side by side</h2><span class="doc-num">§ 2.1</span></header>
+  <div class="doc-tri">
+    <article class="spec em--type-classic">
+      <div class="spec-name"><span class="em-label">A · Classic</span><span class="em-meta">v1 set, re-tuned</span></div>
+      <p class="em-kicker">Field Notes</p>
+      <h3 class="em-title">The Imaging Chain</h3>
+      <p class="em-lede" style="margin-top:var(--em-s2)">From photons to digital numbers.</p>
+      <p class="em-quote">“For what do we live, but to make sport for our neighbours?”</p>
+      <p class="em-attrib"><span class="em-label">Jane Austen</span><em>Pride and Prejudice</em>, 1813</p>
+      <p class="em-small">Readout noise of 2.0 e⁻ and a well of 150,000 e⁻ give a dynamic range near 75,000 : 1 — <span class="em-sc">Plate IV</span>, figure 3.</p>
+      <div class="em-metrics"><div class="em-metric"><span class="em-label">Gain</span><span class="em-metric__value">2.20</span></div><div class="em-metric"><span class="em-label">Noise</span><span class="em-metric__value">1.84</span></div><div class="em-metric"><span class="em-label">MTF</span><span class="em-metric__value">0.32</span></div></div>
+    </article>
+    <article class="spec em--type-scotch">
+      <div class="spec-name"><span class="em-label">B · Scotch</span><span class="em-meta">19th-c. book</span></div>
+      <p class="em-kicker">Field Notes</p>
+      <h3 class="em-title">The Imaging Chain</h3>
+      <p class="em-lede" style="margin-top:var(--em-s2)">From photons to digital numbers.</p>
+      <p class="em-quote">“For what do we live, but to make sport for our neighbours?”</p>
+      <p class="em-attrib"><span class="em-label">Jane Austen</span><em>Pride and Prejudice</em>, 1813</p>
+      <p class="em-small">Readout noise of 2.0 e⁻ and a well of 150,000 e⁻ give a dynamic range near 75,000 : 1 — <span class="em-sc">Plate IV</span>, figure 3.</p>
+      <div class="em-metrics"><div class="em-metric"><span class="em-label">Gain</span><span class="em-metric__value">2.20</span></div><div class="em-metric"><span class="em-label">Noise</span><span class="em-metric__value">1.84</span></div><div class="em-metric"><span class="em-label">MTF</span><span class="em-metric__value">0.32</span></div></div>
+    </article>
+    <article class="spec em--type-precision">
+      <div class="spec-name"><span class="em-label">C · Precision</span><span class="em-meta">modern optical</span></div>
+      <p class="em-kicker">Field Notes</p>
+      <h3 class="em-title">The Imaging Chain</h3>
+      <p class="em-lede" style="margin-top:var(--em-s2)">From photons to digital numbers.</p>
+      <p class="em-quote">“For what do we live, but to make sport for our neighbours?”</p>
+      <p class="em-attrib"><span class="em-label">Jane Austen</span><em>Pride and Prejudice</em>, 1813</p>
+      <p class="em-small">Readout noise of 2.0 e⁻ and a well of 150,000 e⁻ give a dynamic range near 75,000 : 1 — <span class="em-sc">Plate IV</span>, figure 3.</p>
+      <div class="em-metrics"><div class="em-metric"><span class="em-label">Gain</span><span class="em-metric__value">2.20</span></div><div class="em-metric"><span class="em-label">Noise</span><span class="em-metric__value">1.84</span></div><div class="em-metric"><span class="em-label">MTF</span><span class="em-metric__value">0.32</span></div></div>
+    </article>
+  </div>
+
+  <div class="doc-tri" style="margin-top:var(--em-s6)">
+    <dl class="doc-spec" style="grid-template-columns:1fr">
+      <dt>Display</dt><dd>Bodoni Moda 600 — Didone, extreme contrast, variable optical size</dd>
+      <dt>Text</dt><dd>EB Garamond — Renaissance roman; true small caps &amp; old-style figures</dd>
+      <dt>Labels</dt><dd>Barlow Condensed 700 / 600 / 500 · tracking .16em</dd>
+      <dt>Character</dt><dd>Glamorous and editorial. The Didone/Garalde pairing spans three centuries — elegant, but historically loose.</dd>
+    </dl>
+    <dl class="doc-spec" style="grid-template-columns:1fr">
+      <dt>Display &amp; text</dt><dd>Old Standard TT — revival of the late-19th-century “Modern” roman used in scientific journals and encyclopaedias</dd>
+      <dt>Labels</dt><dd>Oswald 500 / 400 · tracking .12em — a condensed gothic in the wood-type tradition</dd>
+      <dt>Character</dt><dd>The most period-true: one family carries everything, like a real Victorian technical volume. Fewer weights; small caps are synthesised.</dd>
+    </dl>
+    <dl class="doc-spec" style="grid-template-columns:1fr">
+      <dt>Display &amp; text</dt><dd>Source Serif 4 — Fournier-influenced transitional with real optical sizes (8–60 pt)</dd>
+      <dt>Labels</dt><dd>IBM Plex Sans Condensed 600 / 500 · tracking .10em — engineered, instrument-panel grotesque</dd>
+      <dt>Character</dt><dd>Leans toward “modern precision dashboard”. Calmest in dense data and in Night; least antique.</dd>
+    </dl>
+  </div>
+  <p class="em-note" style="margin-top:var(--em-s6)"><span class="em-label">Recommendation to test</span>Classic for almanac and editorial pages, Precision for data-dense instrument panels, or Scotch everywhere for maximum period character. Open the <a href="../html-examples/index.html">examples</a> and cycle the type switch to judge them in context — that is where the differences become decisive.</p>
+</section>
+
+<section class="doc-section">
+  <header><h2>Roles</h2><span class="doc-num">§ 2.2</span></header>
+  <table class="em-table">
+    <thead><tr><th>Specimen</th><th>Class</th><th>Font role</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td><span class="em-display" style="font-size:2.6rem">Aa 11</span></td><td><code>.em-display</code></td><td>Display</td><td>Page titles, hero words</td></tr>
+      <tr><td><span class="em-title" style="font-size:1.9rem">The Imaging Chain</span></td><td><code>.em-title</code></td><td>Display</td><td>Plate &amp; section titles</td></tr>
+      <tr><td><span class="em-heading" style="font-size:1.45rem;margin:0">Optical Train</span></td><td><code>.em-heading</code></td><td>Display</td><td>Sub-sections, card titles</td></tr>
+      <tr><td><span class="em-lede" style="font-size:1.2rem">From photons to numbers.</span></td><td><code>.em-lede</code></td><td>Text italic</td><td>Standfirsts, captions of note</td></tr>
+      <tr><td><span class="em-quote" style="font-size:1.25rem;margin:0">“Sport for our neighbours”</span></td><td><code>.em-quote</code></td><td>Text 500</td><td>Quotations, normal case</td></tr>
+      <tr><td><span class="em-kicker">Field Notes</span></td><td><code>.em-kicker</code></td><td>Label, strong</td><td>Masthead, plate name</td></tr>
+      <tr><td><span class="em-label">Read noise</span></td><td><code>.em-label</code></td><td>Label</td><td>Metric names, attributions, table heads</td></tr>
+      <tr><td><span class="em-meta">Leaf 315 of 365</span></td><td><code>.em-meta</code></td><td>Label, light</td><td>Folios, timestamps, provenance</td></tr>
+      <tr><td><span class="em-sc">Plate IV · Fig. 3</span></td><td><code>.em-sc</code></td><td>Text small caps</td><td>Figure &amp; plate references inside prose</td></tr>
+      <tr><td><span class="em-numeral" style="font-size:3rem">11</span></td><td><code>.em-numeral</code></td><td>Display bold</td><td>Dates in medallions, hero figures</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <header><h2>Numerals</h2><span class="doc-num">§ 2.3</span></header>
+  <div class="doc-pair">
+    <div>
+      <p class="em-label">In prose — old-style, proportional</p>
+      <p style="font-size:1.4rem">Founded 1847; 315 leaves; 2,048 pixels.</p>
+      <p class="em-small">Applied automatically to <code>.em p</code>. Old-style figures sit in the lower-case like text — the book convention.</p>
+    </div>
+    <div>
+      <p class="em-label">In data — lining, tabular</p>
+      <ul class="em-leaders em-num" style="font-size:1.2rem">
+        <li><span>Well depth</span><span class="em-leader"></span><span class="em-num">150 000 e⁻</span></li>
+        <li><span>Read noise</span><span class="em-leader"></span><span class="em-num">2.01 e⁻</span></li>
+        <li><span>Gain</span><span class="em-leader"></span><span class="em-num">2.20 e⁻/ADU</span></li>
+      </ul>
+      <p class="em-small">Labels, metrics, tables, scales and dials use <code>lining-nums tabular-nums</code> so columns align. Add <code>.em-num</code> anywhere else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <header><h2>Production imports</h2><span class="doc-num">§ 2.4</span></header>
+  <p class="em-small">The exploration stylesheet imports all seven families. Once a set is chosen, replace the <code>@import</code> in <code>em.css</code> with one of these and add the matching class to the root.</p>
+<pre class="doc-code">/* A · Classic  (default; no class needed) */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..700&amp;family=EB+Garamond:ital,wght@0,400..700;1,400..600&amp;display=swap');
+
+/* B · Scotch   (class="em em--type-scotch") */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Oswald:wght@400;500;600&amp;display=swap');
+
+/* C · Precision (class="em em--type-precision") */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&amp;display=swap');</pre>
+</section>
+
+<footer class="em-colophon doc-foot"><span>Retro-Ink · Engraved Modernism</span><span>II · Typography</span><span class="em-push"><a href="ornaments.html">Next: Ornaments →</a></span></footer>
+</div>
+</body>
+</html>

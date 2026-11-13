@@ -7,13 +7,14 @@
 <link rel="stylesheet" href="../engraved-modernism/em.css">
 <link rel="stylesheet" href="docs.css">
 <script src="../engraved-modernism/em-ornaments.js" defer></script>
+<script src="../engraved-modernism/em-watch.js" defer></script><!-- dev auto-reload; remove in production -->
 </head>
 <body class="em">
 <div class="doc">
 <header class="doc-top em-noprint">
   <a class="doc-brand" href="index.html"><span class="em-kicker">Retro-Ink</span><span class="em-sc">Engraved Modernism</span></a>
   <nav class="doc-nav" aria-label="Documentation"><a href="index.html">Overview</a><a href="foundations.html" aria-current="page">Foundations</a><a href="typography.html">Typography</a><a href="ornaments.html">Ornaments</a><a href="components.html">Components</a><a href="../html-examples/index.html">Examples</a></nav>
-  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
+  <div class="em-switch"><div class="em-switch__group" role="group" aria-label="Theme"><button type="button" data-em-theme="day">Day</button><button type="button" data-em-theme="mid">Mid</button><button type="button" data-em-theme="night">Night</button><button type="button" data-em-theme="signal">Signal</button></div><div class="em-switch__group" role="group" aria-label="Type set"><button type="button" data-em-type="classic">Classic</button><button type="button" data-em-type="scotch">Scotch</button><button type="button" data-em-type="precision">Precision</button></div></div>
 </header>
 <div data-em="scale" data-from="0" data-to="100" data-major="10" data-minor="2"></div>
 
@@ -25,13 +26,15 @@
 
 <section class="doc-section">
   <header><h2>Inks</h2><span class="doc-num">§ 1.1</span></header>
-  <div class="doc-quad">
+  <div class="doc-quad" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
     <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#fff"></div><div class="doc-swatch__body"><div class="em-label">Day paper</div><code>#FFFFFF</code></div></div>
+    <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#DCDCDC"></div><div class="doc-swatch__body"><div class="em-label">Mid paper</div><code>#DCDCDC</code> · 15.3 : 1 with black</div></div>
     <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#000"></div><div class="doc-swatch__body"><div class="em-label">Day ink · Night paper</div><code>#000000</code> · 21 : 1</div></div>
     <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FFE66D"></div><div class="doc-swatch__body"><div class="em-label">Night ink</div><code>#FFE66D</code> · 16.8 : 1 on black</div></div>
     <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FFFF00"></div><div class="doc-swatch__body"><div class="em-label">Signal ink</div><code>#FFFF00</code> · 19.6 : 1 on black</div></div>
   </div>
   <dl class="doc-spec" style="margin-top:var(--em-s5)">
+    <dt>Mid</dt><dd>Day at reduced brightness: neutral grey paper <code>#DCDCDC</code>, the same pure black ink, Day line weights. For bright rooms, long reading and glare-prone screens. Kept strictly neutral so it never drifts toward cream or parchment.</dd>
     <dt>Secondary ink</dt><dd>Day has none — metadata stays pure black and is differentiated by weight and size. Night allows <code>#E5CF63</code> (13.5 : 1) for meta text only, to soften dense label rows.</dd>
     <dt>The one grey</dt><dd><code>--em-ghost</code> exists solely for disabled controls. It is never used for text a reader needs, for fills, or for chart marks.</dd>
     <dt>Tone</dt><dd>Where a design needs “darker”, add lines: closer hatching, cross-hatching, or a denser guilloché band. See <a href="ornaments.html#hatching">hatching tones</a>.</dd>
@@ -49,7 +52,7 @@
       <div class="doc-weight"><span class="em-label">Heavy</span><div class="doc-weight__bar" style="border-top-width:var(--em-heavy)"></div><code>--em-heavy</code></div>
     </div>
     <table class="em-table">
-      <thead><tr><th>Token</th><th class="n">Day</th><th class="n">Night</th><th>Used for</th></tr></thead>
+      <thead><tr><th>Token</th><th class="n">Day · Mid</th><th class="n">Night</th><th>Used for</th></tr></thead>
       <tbody>
         <tr><td><code>--em-hair</code></td><td class="n">0.75 px</td><td class="n">0.55 px</td><td>Guilloché, hatching, minor ticks</td></tr>
         <tr><td><code>--em-fine</code></td><td class="n">1.0 px</td><td class="n">0.8 px</td><td>Rules, separators, major ticks</td></tr>
